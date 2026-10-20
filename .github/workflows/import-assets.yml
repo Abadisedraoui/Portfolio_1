@@ -22,12 +22,11 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p assets
-          for file in "thumbnail-educational-platform.png" "thumbnail-design-system.png" "thumbnail-accessibility.png" "thumbnail-plytix.png" "profile.jpg" "vi-3-1.jpg" "vi-5.jpg" "vi-6.jpg" "pc_3.png" "pic-8.jpg" "pic-10.jpg" "image-1.jpg" "image-7-1.jpg" "image-11.jpg" "hero-collaboration.jpg" "sprint-visibility.jpg" "ux-proposal.jpg"; do
+          for file in "thumbnail-educational-platform.png" "thumbnail-design-system.png" "thumbnail-accessibility.png" "thumbnail-plytix.png" "profile.jpg" "logo.png" "logo-white.png" "vi-3-1.jpg" "vi-5.jpg" "vi-6.jpg" "pc_3.png" "pic-8.jpg" "pic-10.jpg" "image-1.jpg" "image-7-1.jpg" "image-11.jpg" "hero-collaboration.jpg" "sprint-visibility.jpg" "ux-proposal.jpg"; do
             curl --fail --location --silent --show-error --retry 3 "$SOURCE/images/$file" -o "assets/$file"
           done
-          curl --fail --location --silent --show-error --retry 3 "$SOURCE/cv.pdf" -o assets/human-cv.pdf
           curl --fail --location --silent --show-error --retry 3 "$SOURCE/cv1.pdf" -o assets/robot-cv.pdf
-          file assets/human-cv.pdf assets/robot-cv.pdf
+          file assets/robot-cv.pdf
       - name: Save independent copy
         run: |
           git config user.name "github-actions[bot]"
