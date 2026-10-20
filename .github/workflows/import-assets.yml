@@ -1,0 +1,41 @@
+name: Import approved portfolio assets
+
+on:
+  push:
+    paths:
+      - ".github/workflows/import-assets.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout new portfolio
+        uses: actions/checkout@v4
+      - name: Copy existing publicly shared assets to this independent repository
+        env:
+          SOURCE: https://raw.githubusercontent.com/Abadisedraoui/Portfolio/main
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p assets
+          for file in "thumbnail-educational-platform.png" "thumbnail-design-system.png" "thumbnail-accessibility.png" "thumbnail-plytix.png" "profile.jpg" "vi-3-1.jpg" "vi-5.jpg" "vi-6.jpg" "pc_3.png" "pic-8.jpg" "pic-10.jpg" "image-1.jpg" "image-7-1.jpg" "image-11.jpg" "hero-collaboration.jpg" "sprint-visibility.jpg" "ux-proposal.jpg"; do
+            curl --fail --location --silent --show-error --retry 3 "$SOURCE/images/$file" -o "assets/$file"
+          done
+          curl --fail --location --silent --show-error --retry 3 "$SOURCE/cv.pdf" -o assets/human-cv.pdf
+          curl --fail --location --silent --show-error --retry 3 "$SOURCE/cv1.pdf" -o assets/robot-cv.pdf
+          file assets/human-cv.pdf assets/robot-cv.pdf
+      - name: Save independent copy
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets
+          if git diff --cached --quiet; then
+            echo "Assets already copied"
+          else
+            git commit -m "Import images and CV PDFs without changing original portfolio"
+            git push origin HEAD:main
+          fi
