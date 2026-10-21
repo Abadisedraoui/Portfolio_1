@@ -1,6 +1,6 @@
 # Portfolio_1 — Zainab Abadi
 
-Independent redesign workspace, inspired by the editorial hierarchy and modular case-study approach of Tabfolio Pro (not a copy of its proprietary files).
+Independent portfolio based on the visual composition of [Tabfolio Pro](https://tabfoliopro.framer.ai/), using Zainab's own content and assets.
 
 **Original portfolio is read-only:** `Abadisedraoui/Portfolio` and `https://zainababadi.com` must never be modified by this project.
 
@@ -11,10 +11,12 @@ Independent redesign workspace, inspired by the editorial hierarchy and modular 
 - Selected projects: Oxford Premium research, Oxford design system, accessibility, and Plytix.
 
 ## Implementation
-A lightweight, build-free HTML/CSS/JS prototype. Source images are currently referenced by their public, read-only GitHub RAW URLs from the existing portfolio, pending independent asset migration. This is a temporary dependency and **does not edit the original**.
+A lightweight, build-free HTML/CSS/JS site. Images and the CV are stored locally in `assets/`. Primary pages share the compact profile introduction, Manrope typography, translucent tab navigation, light canvas and three-column footer. Projects use a two-column image grid on desktop and one column on mobile. Case-study content and Quick Scan / Deep Dive remain in `projects.js`.
+
+Navigation: Projects, Articles, About, Experiments and CV. Contact is available through Let's chat. Experiments displays Coming soon.
 
 ## Run
 Open `index.html` in a web browser, or run `python -m http.server 8080` and open `http://localhost:8080/`.
 
 ## Status
-First development iteration: requires visual QA on desktop and mobile before publication. The live original portfolio remains unchanged.
+Visual layout checked in the browser on desktop and in 390px / 320px frames. Static local links and JavaScript syntax checked. The original portfolio is independent of this repository.
