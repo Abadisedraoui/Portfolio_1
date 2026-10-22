@@ -35,3 +35,73 @@
   .tools-grid { grid-template-columns: 1fr; gap: 12px; }
   .tools-grid article { padding: 20px; }
 }
+
+
+/* 2026-10-22: Tabfolio-style experience thumbnails and larger résumé type */
+.resume-section > h2 { font-size: 30px; }
+.resume-role h3, .resume-entry h3 { font-size: 20px; }
+.resume-meta { font-size: 15px; }
+.resume-role > p:not(.resume-meta), .resume-entry > p:not(.resume-meta) { font-size: 17px; line-height: 1.65; }
+.tools-grid h3 { font-size: 17px; }
+.tools-grid p, .additional-tools { font-size: 14px; }
+.skills-list li { font-size: 15px; }
+.how-i-work p { font-size: 17px; }
+
+.resume-role--thumb {
+  display: grid;
+  grid-template-columns: 66px minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+.resume-role-copy { min-width: 0; }
+.resume-thumb {
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid #e5e5ea;
+  border-radius: 15px;
+  background: #fff;
+  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+}
+a.resume-thumb:hover {
+  transform: translateY(-2px);
+  border-color: #d3d6df;
+  box-shadow: 0 8px 22px rgba(7,19,28,.08);
+}
+.resume-thumb--health {
+  color: #8f69d8;
+  background: linear-gradient(145deg, #f1eaff, #e4f3ea);
+}
+.resume-thumb--health svg { width: 32px; height: 32px; fill: currentColor; }
+.resume-thumb--plytix svg { width: 43px; height: 43px; }
+.resume-thumb--oup { position: relative; }
+.oup-logo-crop {
+  width: 48px;
+  height: 48px;
+  display: block;
+  overflow: hidden;
+}
+.oup-logo-crop img {
+  width: auto;
+  max-width: none;
+  height: 48px;
+}
+.resume-role-title-link {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  transition: color .18s ease;
+}
+.resume-role-title-link:hover { color: var(--brand); }
+
+@media (max-width: 560px) {
+  .resume-role--thumb { grid-template-columns: 54px minmax(0,1fr); gap: 14px; }
+  .resume-thumb { width: 48px; height: 48px; border-radius: 13px; }
+  .resume-thumb--health svg { width: 28px; height: 28px; }
+  .resume-thumb--plytix svg { width: 36px; height: 36px; }
+  .oup-logo-crop, .oup-logo-crop img { height: 40px; }
+  .oup-logo-crop { width: 40px; }
+}
