@@ -34,10 +34,10 @@
 }
 .dock-links a:hover { color: var(--ink); background: rgba(255,255,255,.35); }
 .dock-links a.is-current { color: var(--ink); background: rgba(255,255,255,.8); box-shadow: 0 1px 5px rgba(20,20,40,.035); }
-.card-art-1 { background: linear-gradient(135deg,#dceafa,#e6e8f4 65%,#e2f2f5); }
-.card-art-2 { background: linear-gradient(135deg,#e2eafa,#efedf8 60%,#e0f1f1); }
-.card-art-3 { background: linear-gradient(135deg,#e0f0ee,#e3eaf5 60%,#eeeeF8); }
-.card-art-4 { background: linear-gradient(135deg,#e5e5f9,#e6eef7 55%,#dbeef4); }
+.card-art-1 { --thumb-green-position: 0% 100%; --thumb-lilac-position: 100% 0%; --thumb-angle: 135deg; }
+.card-art-2 { --thumb-green-position: 100% 100%; --thumb-lilac-position: 0% 0%; --thumb-angle: 215deg; }
+.card-art-3 { --thumb-green-position: 0% 0%; --thumb-lilac-position: 100% 100%; --thumb-angle: 35deg; }
+.card-art-4 { --thumb-green-position: 100% 0%; --thumb-lilac-position: 0% 100%; --thumb-angle: 315deg; }
 @media (max-width: 760px) {
   .topbar { top: 20px; }
   .dock-links { gap: 0; }

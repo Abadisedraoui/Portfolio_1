@@ -5,11 +5,33 @@
   --line: #e7e7eb;
   --surface: #f0f0f3;
   --brand: #1745dc;
+  --brand-blue: 4 163 233;
+  --brand-lilac: 188 178 235;
+  --brand-green: 124 216 170;
   --radius: 20px;
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; background: #fafafa; }
-body { margin: 0; min-height: 100vh; display: flex; flex-direction: column; background-color: #fafafa; background-image: radial-gradient(ellipse 72% 330px at 76% -20px,rgba(153,107,255,.68) 0%,rgba(167,150,249,.52) 40%,rgba(214,219,249,.28) 70%,rgba(250,250,250,0) 100%); background-repeat: no-repeat; background-size: 100% 500px; color: var(--ink); font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 16px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+body { position: relative; isolation: isolate; margin: 0; min-height: 100vh; display: flex; flex-direction: column; background: #fafafa; color: var(--ink); font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 16px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+/* Two clipped, moving layers keep the blue atmosphere soft and seamless. */
+.brand-atmosphere { position: absolute; z-index: -1; inset: 0 0 auto; height: 560px; overflow: hidden; pointer-events: none; -webkit-mask-image: linear-gradient(#000 0%, #000 12%, transparent 100%); mask-image: linear-gradient(#000 0%, #000 12%, transparent 100%); }
+.brand-atmosphere::before, .brand-atmosphere::after { content: ""; position: absolute; inset: -25% -15%; }
+.brand-atmosphere::before {
+  background: radial-gradient(ellipse 44% 58% at 68% 14%, rgb(var(--brand-blue) / .82) 0%, rgb(var(--brand-blue) / .42) 42%, transparent 76%), radial-gradient(ellipse 27% 48% at 96% 15%, rgb(var(--brand-lilac) / .68), transparent 78%), radial-gradient(ellipse 30% 46% at 37% 12%, rgb(var(--brand-green) / .36), transparent 78%);
+  animation: atmosphere-flow 18s ease-in-out infinite alternate;
+}
+.brand-atmosphere::after {
+  background: radial-gradient(ellipse 29% 46% at 33% 16%, rgb(var(--brand-green) / .42), transparent 76%), radial-gradient(ellipse 30% 45% at 94% 12%, rgb(var(--brand-lilac) / .56), transparent 78%);
+  animation: atmosphere-current 24s ease-in-out infinite alternate;
+}
+@keyframes atmosphere-flow {
+  from { transform: translate3d(4%, -3%, 0) scale(1.04); }
+  to { transform: translate3d(-7%, 6%, 0) scale(1.16); }
+}
+@keyframes atmosphere-current {
+  from { transform: translate3d(-8%, 4%, 0) scale(1.05); opacity: .55; }
+  to { transform: translate3d(9%, -4%, 0) scale(1.14); opacity: .85; }
+}
 main { flex: 1; width: 100%; }
 a { color: inherit; text-decoration: none; }
 button { font: inherit; }
@@ -33,7 +55,11 @@ img { display: block; max-width: 100%; }
 .work-section { scroll-margin-top: 24px; }
 .work-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
 .work-card { display: block; min-width: 0; border-radius: 20px 20px 4px 4px; }
-.card-art { aspect-ratio: 4 / 3; position: relative; overflow: hidden; border-radius: var(--radius); background: #e6eaf3; }
+.card-art { aspect-ratio: 4 / 3; position: relative; overflow: hidden; border-radius: var(--radius); }
+.card-art, .article-thumbnail {
+  background-color: #d6f1ff;
+  background-image: radial-gradient(ellipse at var(--thumb-green-position,0% 100%), rgb(var(--brand-green) / .76), transparent 62%), radial-gradient(ellipse at var(--thumb-lilac-position,100% 0%), rgb(var(--brand-lilac) / .76), transparent 64%), linear-gradient(var(--thumb-angle,135deg), #d6f1ff, rgb(var(--brand-blue) / .7));
+}
 .card-art img { width: 100%; height: 100%; padding: 16px; object-fit: contain; transform: scale(1.15); transition: transform .4s cubic-bezier(.2,.7,.3,1); }
 .work-card:hover .card-art img { transform: scale(1.18); }
 .work-meta { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-top: 8px; color: var(--muted); font-size: 14px; line-height: 22px; }
