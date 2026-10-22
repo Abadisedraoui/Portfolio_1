@@ -13,10 +13,14 @@ Independent portfolio based on the visual composition of [Tabfolio Pro](https://
 ## Implementation
 A lightweight, build-free HTML/CSS/JS site. Images and the CV are stored locally in `assets/`. Primary pages share the compact profile introduction, Manrope typography, translucent tab navigation, light canvas and three-column footer. Projects use a two-column image grid on desktop and one column on mobile. Case-study content and Quick Scan / Deep Dive remain in `projects.js`.
 
-Navigation: Projects, Articles, About, Experiments and CV. Contact is available through Let's chat. Experiments displays Coming soon.
+Navigation: Projects, Articles, About, Experiments and Resume. A floating CV button downloads the PDF. Contact is available through Let's chat. Experiments displays Coming soon.
 
 ## Run
 Open `index.html` in a web browser, or run `python -m http.server 8080` and open `http://localhost:8080/`.
 
 ## Status
 Visual layout checked in the browser on desktop and in 390px / 320px frames. Static local links and JavaScript syntax checked. The original portfolio is independent of this repository.
+
+## Article thumbnails
+
+Each card in `articles.html` has a `.article-thumbnail` slot. Add an `<img>` inside it using a local image or GIF in `assets/`; the card’s aspect ratio controls its display. Captions contain only the content type and title.

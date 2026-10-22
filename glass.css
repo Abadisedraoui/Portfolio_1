@@ -14,7 +14,7 @@
   gap: 2px;
   padding: 4px;
   border-radius: 24px;
-  background: rgba(218,218,230,.5);
+  background: rgba(245,245,251,.65);
   background-image: linear-gradient(112deg,rgba(255,255,255,.4) -21%,rgba(255,255,255,0) 100%);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -25,7 +25,7 @@
   position: relative;
   border-radius: 20px;
   padding: 7px 12px;
-  color: #62636d;
+  color: #4e5362;
   font-size: 14px;
   font-weight: 500;
   line-height: 22px;
@@ -44,8 +44,8 @@
   .dock-links a { padding-inline: 11px; font-size: 13px; }
 }
 @media (max-width: 400px) {
-  .dock-links a { padding-inline: 9px; font-size: 12px; }
+  .dock-links a { padding-inline: 7px; font-size: 11.5px; }
 }
 @media (max-width: 340px) {
-  .dock-links a { padding-inline: 8px; font-size: 11px; }
+  .dock-links a { padding-inline: 5px; font-size: 11px; }
 }
