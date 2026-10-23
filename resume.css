@@ -105,3 +105,11 @@ a.resume-thumb:hover {
   .oup-logo-crop, .oup-logo-crop img { height: 40px; }
   .oup-logo-crop { width: 40px; }
 }
+
+/* Resume experience copy is nested under .resume-role-copy. */
+.resume-role-copy > p:not(.resume-meta) { color:var(--muted);font-size:17px;line-height:1.65;margin:0 0 13px;max-width:1040px; }
+.resume-role-copy > p:last-child { margin-bottom:0; }
+.resume-thumb img { width:50px;height:50px;object-fit:contain;display:block; }
+.resume-role-title-link,.resume-role-title-link:visited { color:#101820;text-decoration:underline;text-underline-offset:4px; }
+.resume-role-title-link:hover,.resume-role-title-link:focus-visible { color:#2563eb; }
+@media(max-width:560px){.resume-thumb img{width:42px;height:42px}}
