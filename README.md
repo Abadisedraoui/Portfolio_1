@@ -24,3 +24,11 @@ Visual layout checked in the browser on desktop and in 390px / 320px frames. Sta
 ## Article thumbnails
 
 Each card in `articles.html` has a `.article-thumbnail` slot. Add an `<img>` inside it using a local image or GIF in `assets/`; the card’s aspect ratio controls its display. Captions contain only the content type and title.
+
+## Analytics and contact form
+
+- `consent.js`: shows a consent banner on first visit. Contentsquare (the Hotjar successor) only loads after Accept. "Cookie settings" in the footer reopens the choice. The choice is stored in `localStorage` under `za-analytics-consent`.
+- `contact.js`: "Let's chat" opens a native `<dialog>` form that posts to Formspree. Without JavaScript the link falls back to `mailto:`.
+- `privacy.html`: explains both services. Update it if either one changes.
+- `extras.css`: styles for the banner, the dialog and the privacy page.
+- Contentsquare must list this site's domain in its project settings, or the tag will load but record nothing.
