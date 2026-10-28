@@ -84,3 +84,22 @@
 .about-story-copy h2 { max-width: 560px; }
 @media (max-width: 760px) { .skills-groups { grid-template-columns: 1fr; } .hero .intro { max-width: none; } }
 @media (hover: none) { .work-card:hover .card-art { transform: none; box-shadow: none; } }
+
+/* 2026-10-28 (2): black underlined titles with blue hover, glance strip, featured break, photo framing */
+.work-meta h3, .article-caption h3 { color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+.work-card:hover h3, .article-card:hover h3, .work-card:focus-visible h3, .article-card:focus-visible h3 { color: var(--brand); }
+.glance { padding-bottom: 40px; }
+.glance dl { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 0; margin: 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.glance div { padding: 18px 20px 18px 0; }
+.glance div + div { padding-left: 20px; border-left: 1px solid var(--line); }
+.glance dt { margin: 0 0 4px; color: var(--muted); font-size: 13px; font-weight: 500; }
+.glance dd { margin: 0; font-size: 15px; line-height: 1.45; font-weight: 500; letter-spacing: -.01em; }
+.resume-role--feature { padding: 24px !important; margin-bottom: 8px; border: 1px solid #e6dff7 !important; border-radius: 20px; background: linear-gradient(135deg, #f6f1ff, #eaf6ef 70%, #eaf5ff); }
+.resume-role--feature .resume-thumb { border-color: #e6dff7; }
+.about-carousel-viewport { height: auto; aspect-ratio: 4 / 5; }
+.about-carousel .about-portrait { object-position: center center; }
+.about-carousel-slide .about-portrait[src$=".gif"] { object-fit: contain; }
+.collectible { align-self: stretch; }
+.collectible img { aspect-ratio: auto; height: auto; }
+@media (max-width: 1000px) { .glance dl { grid-template-columns: repeat(2, minmax(0,1fr)); } .glance div:nth-child(3) { padding-left: 0; border-left: 0; } .glance div:nth-child(n+3) { border-top: 1px solid var(--line); } }
+@media (max-width: 520px) { .glance { padding-bottom: 24px; } .glance dl { grid-template-columns: repeat(2, minmax(0,1fr)); } .glance div { padding: 12px 12px 12px 0; } .glance div + div { padding-left: 12px; } .glance div:nth-child(3) { padding-left: 0; border-left: 0; } .glance dt { font-size: 12px; } .glance dd { font-size: 13.5px; line-height: 1.4; } .resume-role--feature { padding: 18px !important; } }
