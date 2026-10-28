@@ -5,7 +5,7 @@ const p=data.find(item=>item.slug===slug);
 const main=document.getElementById('main');
 function esc(s){return String(s).replace(/[&<>"]/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch]));}
 if(!p){main.innerHTML='<section class="container project-hero"><h1>Project not found.</h1><a href="index.html#work">← Return to selected work</a></section>';}else{
- document.title=p.title+' — Zainab Abadi';
+ document.title=p.title+' | Zainab Abadi';
  let toc=p.sections.map(([title],i)=>'<li><a href="#section-'+(i+1)+'">'+esc(title)+'</a></li>').join('');
  const blocks=p.sections.map(([title,paragraph],i)=>'<section id="section-'+(i+1)+'" class="study-section"><h2>'+esc(title)+'</h2><p>'+esc(paragraph)+'</p></section>').join('');
  const gallery=media[p.slug].map(([img,caption])=>'<figure class="evidence-item"><a href="assets/'+encodeURIComponent(img)+'" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="assets/'+encodeURIComponent(img)+'" alt="'+esc(caption)+'"></a><figcaption>'+esc(caption)+' <span aria-hidden="true">↗</span></figcaption></figure>').join('');

@@ -103,3 +103,10 @@
 .collectible img { aspect-ratio: auto; height: auto; }
 @media (max-width: 1000px) { .glance dl { grid-template-columns: repeat(2, minmax(0,1fr)); } .glance div:nth-child(3) { padding-left: 0; border-left: 0; } .glance div:nth-child(n+3) { border-top: 1px solid var(--line); } }
 @media (max-width: 520px) { .glance { padding-bottom: 24px; } .glance dl { grid-template-columns: repeat(2, minmax(0,1fr)); } .glance div { padding: 12px 12px 12px 0; } .glance div + div { padding-left: 12px; } .glance div:nth-child(3) { padding-left: 0; border-left: 0; } .glance dt { font-size: 12px; } .glance dd { font-size: 13.5px; line-height: 1.4; } .resume-role--feature { padding: 18px !important; } }
+
+/* 2026-10-28 (3): articles show the title first, never truncated; no empty-image icon */
+.articles-grid .article-kind { font-size: 13px; font-weight: 500; letter-spacing: 0; line-height: 20px; color: var(--muted); }
+.articles-grid .article-caption h3 { margin-top: 2px; color: var(--ink); font-size: 17px; font-weight: 600; line-height: 1.35; letter-spacing: -.02em; white-space: normal; overflow: visible; text-overflow: clip; }
+.articles-grid .article-card:hover h3, .articles-grid .article-card:focus-visible h3 { color: var(--brand); text-decoration: underline; }
+.articles-grid .article-card:focus-visible { outline: 3px solid var(--brand); outline-offset: 6px; }
+.thumbnail-placeholder { display: none; }
