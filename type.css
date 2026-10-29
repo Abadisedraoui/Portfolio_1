@@ -187,3 +187,7 @@ html.js .trust .ribbon:hover .ribbon-inner, html.js .trust .ribbon.is-paused .ri
   html.js .trust .ribbon-list { flex-wrap: wrap; padding: 0; }
   html.js .trust .ribbon-dup, html.js .ribbon-toggle { display: none; }
 }
+
+/* ---------- Evidence labels ---------- */
+.evidence-kind { display: inline-block; margin: 0 8px 4px 0; padding: 2px 12px; border-radius: 999px; background: #e6edf8; color: #27455c; font-size: var(--fs-caption); font-weight: 600; line-height: 22px; }
+.evidence-item figcaption { line-height: 1.5; }
