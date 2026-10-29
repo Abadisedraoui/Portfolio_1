@@ -148,3 +148,42 @@ body { font-size: var(--fs-body); line-height: 1.55; }
 .resume-bullets li { position: relative; margin: 0 0 .6em; padding-left: 1.3em; font-size: var(--fs-body); line-height: 1.55; color: var(--muted); }
 .resume-bullets li::before { content: ""; position: absolute; left: .15em; top: .68em; width: .42em; height: .42em; border-radius: 50%; background: var(--brand); }
 .resume-role > p:not(.resume-meta) { margin-top: 4px; }
+
+/* ---------- "Worked with" logo ribbon ----------
+   Static and wrapped by default (no JS, reduced motion). With JS it scrolls slowly; it stops on hover
+   and with the Pause button (WCAG 2.2.2). The second list is a visual copy, hidden from screen readers. */
+.trust .trust-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 14px; }
+.trust .trust-head p { margin: 0; }
+.ribbon-toggle { display: none; align-items: center; gap: 10px; min-height: 44px; padding: 8px 16px; border: 1px solid var(--field-border); border-radius: 999px; background: transparent; color: var(--ink); font: inherit; font-size: var(--fs-small); cursor: pointer; }
+.ribbon-toggle:hover { background: #eeeef3; }
+.ribbon-toggle-icon { width: 10px; height: 12px; border-left: 3px solid currentColor; border-right: 3px solid currentColor; }
+.ribbon-toggle.is-paused .ribbon-toggle-icon { width: 0; height: 0; border: 0; border-top: 7px solid transparent; border-bottom: 7px solid transparent; border-left: 11px solid currentColor; }
+html.js .ribbon-toggle { display: inline-flex; }
+
+.trust .ribbon { --k: 1; position: relative; overflow: hidden; }
+.trust .ribbon-inner { display: flex; flex-wrap: wrap; }
+.trust .ribbon-list { display: flex; flex-wrap: wrap; align-items: center; gap: 24px 56px; margin: 0; padding: 0; list-style: none; }
+.trust .ribbon-list li { display: flex; align-items: center; flex: 0 0 auto; min-height: 48px; gap: 0; font-size: inherit; }
+.trust .ribbon-dup { display: none; }
+.trust .rl { display: block; height: auto; max-width: none; filter: grayscale(1) contrast(1.12); transition: filter .2s; }
+.trust .ribbon-list li:hover .rl, .trust .ribbon-list li:hover .rl-mark img { filter: none; }
+.trust .rl-zara { width: calc(150px * var(--k)); } .trust .rl-sheedo { width: calc(150px * var(--k)); }
+.trust .rl-regalador { width: calc(150px * var(--k)); } .trust .rl-ipsik { width: calc(62px * var(--k)); }
+.trust .rl-alma { width: calc(190px * var(--k)); } .trust .rl-cam { width: calc(124px * var(--k)); }
+.trust .rl-mark { display: flex; align-items: center; gap: 10px; font-size: var(--fs-body); font-weight: 600; letter-spacing: -.02em; white-space: nowrap; color: var(--ink); }
+.trust .rl-mark img { width: calc(34px * var(--k)); height: calc(34px * var(--k)); filter: grayscale(1); transition: filter .2s; }
+.trust .rl-text { font-size: var(--fs-h4); font-weight: 700; letter-spacing: -.03em; white-space: nowrap; color: var(--ink); }
+
+html.js .trust .ribbon { -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
+html.js .trust .ribbon-inner { flex-wrap: nowrap; width: max-content; animation: ribbon-scroll 60s linear infinite; }
+html.js .trust .ribbon-list { flex-wrap: nowrap; flex: 0 0 auto; padding: 0 28px; }
+html.js .trust .ribbon-dup { display: flex; }
+html.js .trust .ribbon:hover .ribbon-inner, html.js .trust .ribbon.is-paused .ribbon-inner { animation-play-state: paused; }
+@keyframes ribbon-scroll { to { transform: translateX(-50%); } }
+@media (max-width: 600px) { .trust .ribbon { --k: .82; } .trust .ribbon-list { gap: 24px 40px; } }
+@media (prefers-reduced-motion: reduce) {
+  html.js .trust .ribbon { -webkit-mask-image: none; mask-image: none; }
+  html.js .trust .ribbon-inner { animation: none; flex-wrap: wrap; width: auto; }
+  html.js .trust .ribbon-list { flex-wrap: wrap; padding: 0; }
+  html.js .trust .ribbon-dup, html.js .ribbon-toggle { display: none; }
+}
