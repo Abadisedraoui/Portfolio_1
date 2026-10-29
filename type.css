@@ -169,7 +169,7 @@ html.js .ribbon-toggle { display: inline-flex; }
 .trust .ribbon-list li:hover .rl, .trust .ribbon-list li:hover .rl-mark img { filter: none; }
 .trust .rl-zara { width: calc(150px * var(--k)); } .trust .rl-sheedo { width: calc(150px * var(--k)); }
 .trust .rl-regalador { width: calc(150px * var(--k)); } .trust .rl-ipsik { width: calc(62px * var(--k)); }
-.trust .rl-alma { width: calc(190px * var(--k)); } .trust .rl-cam { width: calc(124px * var(--k)); }
+.trust .rl-pop { width: calc(176px * var(--k)); } .trust .rl-alma { width: calc(190px * var(--k)); } .trust .rl-cam { width: calc(124px * var(--k)); }
 .trust .rl-mark { display: flex; align-items: center; gap: 10px; font-size: var(--fs-body); font-weight: 600; letter-spacing: -.02em; white-space: nowrap; color: var(--ink); }
 .trust .rl-mark img { width: calc(34px * var(--k)); height: calc(34px * var(--k)); filter: grayscale(1); transition: filter .2s; }
 .trust .rl-text { font-size: var(--fs-h4); font-weight: 700; letter-spacing: -.03em; white-space: nowrap; color: var(--ink); }
