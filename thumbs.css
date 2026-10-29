@@ -1,0 +1,155 @@
+/* Animated thumbnails drawn in HTML/CSS. The resting state is the finished frame,
+   so reduced motion and no-JS visitors see a complete image. Sizes use cqw
+   (1% of the thumbnail width) so the scene scales with the card. */
+.thumb { position: absolute; inset: 0; container-type: inline-size; overflow: hidden; font-family: Manrope, "Helvetica Neue", Arial, sans-serif; color: #1d1233; pointer-events: none; }
+.thumb * { box-sizing: border-box; }
+
+/* ---------- Plytix: the Find & Replace decision ---------- */
+.tp-window { position: absolute; left: 7cqw; top: 9cqw; width: 86cqw; height: 52cqw; overflow: hidden; border-radius: 2cqw; background: #fff; box-shadow: 0 3cqw 8cqw rgba(60,20,120,.24), 0 0 0 .2cqw rgba(24,10,60,.08); }
+.tp-nav { display: flex; align-items: center; gap: 3cqw; height: 6.4cqw; padding: 0 2.4cqw; background: #26104f; color: rgba(255,255,255,.86); font-size: 1.7cqw; font-weight: 500; }
+.tp-logo { display: flex; gap: .35cqw; margin-right: 1cqw; }
+.tp-logo i { display: block; width: .9cqw; height: 2.6cqw; border-radius: .3cqw; transform: skewX(-18deg); }
+.tp-logo i:nth-child(1) { background: #18cddb; } .tp-logo i:nth-child(2) { background: #7812df; } .tp-logo i:nth-child(3) { background: #ffb900; }
+.tp-nav .is-on { color: #fff; box-shadow: 0 .35cqw 0 #ffb900; }
+.tp-bar { display: flex; align-items: center; justify-content: space-between; padding: 2cqw 2.4cqw 1.2cqw; }
+.tp-title { font-size: 2.7cqw; font-weight: 700; letter-spacing: -.02em; }
+.tp-btn { padding: 1cqw 2.2cqw; border-radius: 1cqw; background: #7812df; color: #fff; font-size: 1.9cqw; font-weight: 600; white-space: nowrap; }
+.tp-head, .tp-row { display: grid; grid-template-columns: 11cqw 1fr 22cqw 14cqw; align-items: center; gap: 1.6cqw; padding: 0 2.4cqw; }
+.tp-head { height: 3.6cqw; color: #7b7391; font-size: 1.4cqw; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; border-bottom: .2cqw solid #eceaf3; }
+.tp-row { height: 6.1cqw; border-bottom: .2cqw solid #f1eff6; font-size: 2.1cqw; font-weight: 500; }
+.tp-sku { justify-self: start; padding: .3cqw 1.1cqw; border-radius: .8cqw; background: #f0e6fd; color: #5a0fb0; font-size: 1.7cqw; font-weight: 600; }
+.tp-bar-track { position: relative; display: flex; align-items: center; gap: 1.2cqw; font-size: 1.8cqw; color: #4a4360; }
+.tp-bar-track::before { content: ""; flex: 0 0 11cqw; height: 1.1cqw; border-radius: 1cqw; background: linear-gradient(90deg, #ffb900 var(--p), #ece9f3 var(--p)); }
+.tp-chip { justify-self: start; padding: .4cqw 1.3cqw; border-radius: 1cqw; font-size: 1.7cqw; font-weight: 600; }
+.tp-chip.ok { background: #d9f5e6; color: #14663d; } .tp-chip.draft { background: #fff1c2; color: #7a5200; }
+.tp-scrim { position: absolute; inset: 0; background: rgba(38,16,79,.2); }
+
+.tp-dialog { position: absolute; left: 36cqw; top: 26cqw; width: 57cqw; padding: 2.6cqw; border-radius: 2cqw; background: #fff; box-shadow: 0 4cqw 10cqw rgba(38,16,79,.36), 0 0 0 .2cqw rgba(24,10,60,.1); }
+.tp-dialog-title { margin-bottom: 1.8cqw; font-size: 2.9cqw; font-weight: 700; letter-spacing: -.02em; }
+.tp-label { margin: 0 0 .6cqw; color: #6a6280; font-size: 1.6cqw; font-weight: 600; }
+.tp-input { position: relative; height: 4.6cqw; margin-bottom: 1.5cqw; padding: 0 1.6cqw; display: flex; align-items: center; border: .25cqw solid #cdc7dc; border-radius: 1cqw; font-size: 2cqw; font-family: "SFMono-Regular", Consolas, monospace; color: #1d1233; }
+.tp-input span { display: block; white-space: nowrap; }
+.tp-warning { display: flex; align-items: flex-start; gap: 1.4cqw; padding: 1.5cqw 1.7cqw; border-radius: 1.2cqw; background: #fff4cf; box-shadow: inset 0 0 0 .3cqw #ffb900; color: #5b4100; font-size: 2cqw; font-weight: 600; line-height: 1.3; }
+.tp-warning svg { flex: 0 0 3cqw; width: 3cqw; height: 3cqw; margin-top: .1cqw; }
+
+.tp-cursor { position: absolute; left: 83cqw; top: 19.5cqw; width: 3.4cqw; height: 3.4cqw; opacity: 0; filter: drop-shadow(0 .3cqw .5cqw rgba(0,0,0,.35)); }
+
+/* ---------- Motion: only runs when the card sets .is-playing ---------- */
+.thumb.is-playing .tp-window { animation: tp-rise .7s cubic-bezier(.2,.7,.3,1) both; }
+.thumb.is-playing .tp-row { animation: tp-row .5s calc(.3s + var(--i) * .12s) cubic-bezier(.2,.7,.3,1) both; }
+.thumb.is-playing .tp-cursor { animation: tp-cursor 1.7s .5s cubic-bezier(.4,0,.2,1) both; }
+.thumb.is-playing .tp-btn { animation: tp-press .35s 1.45s ease-in-out both; }
+.thumb.is-playing .tp-scrim { animation: tp-fade .4s 1.55s ease-out both; }
+.thumb.is-playing .tp-dialog { animation: tp-pop .65s 1.6s cubic-bezier(.2,.9,.3,1.15) both; }
+.thumb.is-playing .tp-type-1 { animation: tp-type .55s 2.15s steps(18, end) both; }
+.thumb.is-playing .tp-type-2 { animation: tp-type .55s 2.5s steps(18, end) both; }
+.thumb.is-playing .tp-warning { animation: tp-warn .5s 3.05s cubic-bezier(.2,.8,.3,1) both, tp-ring .9s 3.55s ease-out both; }
+
+@keyframes tp-rise { from { opacity: 0; transform: translateY(3cqw) scale(.98); } }
+@keyframes tp-row { from { opacity: 0; transform: translateY(1.2cqw); } }
+@keyframes tp-cursor {
+  0% { opacity: 0; left: 68cqw; top: 55cqw; }
+  12% { opacity: 1; }
+  55% { left: 83cqw; top: 19.5cqw; opacity: 1; }
+  80% { left: 83cqw; top: 19.5cqw; opacity: 1; }
+  100% { left: 83cqw; top: 19.5cqw; opacity: 0; }
+}
+@keyframes tp-press { 50% { transform: scale(.93); background: #5a0fb0; } }
+@keyframes tp-fade { from { opacity: 0; } }
+@keyframes tp-pop { from { opacity: 0; transform: translateY(2.4cqw) scale(.94); } }
+@keyframes tp-type { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+@keyframes tp-warn { from { opacity: 0; transform: translateY(-1.6cqw); } }
+@keyframes tp-ring { from { box-shadow: inset 0 0 0 .3cqw #ffb900, 0 0 0 0 rgba(255,185,0,.55); } to { box-shadow: inset 0 0 0 .3cqw #ffb900, 0 0 0 2.2cqw rgba(255,185,0,0); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .thumb.is-playing * { animation: none !important; }
+}
+
+/* ---------- Oxford design system: tokens board ----------
+   Colours and type are the public Oxford Premium values: navy #002147, blue #1963B3,
+   bright blue #0043E0, yellow #FFE12D, slate #8090A3, DM Serif Display / Open Sans / Fira Sans. */
+.ds-board { position: absolute; left: 6cqw; top: 5.5cqw; width: 88cqw; padding: 2.6cqw 3.4cqw 2.8cqw; display: flex; flex-direction: column; gap: 1.8cqw; border-radius: 2cqw; background: #fff; box-shadow: 0 3cqw 8cqw rgba(0,33,71,.22), 0 0 0 .2cqw rgba(0,33,71,.08); color: #002147; font-family: "Open Sans", sans-serif; }
+.ds-tag { display: inline-flex; align-self: flex-start; padding: .5cqw 1.4cqw; border-radius: 1cqw; background: #002147; color: #fff; font-size: 1.5cqw; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+.ds-label { margin-bottom: 1cqw; color: #27455c; font-size: 1.5cqw; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.ds-swatches { display: flex; gap: 1.8cqw; }
+.ds-sw { width: 12cqw; }
+.ds-sw i { display: block; height: 7.4cqw; border-radius: 1.2cqw; box-shadow: inset 0 0 0 .2cqw rgba(0,33,71,.12); }
+.ds-sw span { display: block; margin-top: .8cqw; font-family: "SFMono-Regular", Consolas, monospace; font-size: 1.5cqw; color: #27455c; }
+.ds-type { display: flex; align-items: center; gap: 3cqw; }
+.ds-aa { flex: 0 0 15cqw; font-family: "DM Serif Display", serif; font-size: 11cqw; line-height: 1; color: #002147; }
+.ds-lines { flex: 1; display: flex; flex-direction: column; gap: .5cqw; }
+.ds-line { display: flex; align-items: baseline; justify-content: space-between; gap: 2cqw; border-bottom: .2cqw solid #e6eaf0; padding-bottom: .5cqw; }
+.ds-line b { font-weight: 400; white-space: nowrap; }
+.ds-line small { color: #27455c; font-size: 1.4cqw; white-space: nowrap; }
+.f-display { font-family: "DM Serif Display", serif; font-size: 4.6cqw; line-height: 1.1; }
+.f-light { font-weight: 300 !important; font-size: 3.4cqw; line-height: 1.15; }
+.f-body { font-size: 2.2cqw; line-height: 1.3; }
+.ds-buttons { display: flex; gap: 2.6cqw; }
+.ds-b { display: flex; flex-direction: column; align-items: flex-start; gap: .9cqw; }
+.ds-btn { display: inline-block; padding: 1.2cqw 2.6cqw; border-radius: .6cqw; background: #002147; color: #fff; font-family: "Fira Sans", sans-serif; font-size: 2cqw; line-height: 1.3; }
+.ds-hover { background: #27455c; }
+.ds-focus { box-shadow: 0 0 0 .5cqw #fff, 0 0 0 1cqw #0043e0; }
+.ds-off { background: #8090a3; color: #eef1f5; }
+.ds-b small { color: #27455c; font-size: 1.4cqw; font-weight: 600; }
+
+.thumb.is-playing .ds-board { animation: tp-rise .6s cubic-bezier(.2,.7,.3,1) both; }
+.thumb.is-playing .ds-sw { animation: ds-pop .45s calc(.5s + var(--i) * .13s) cubic-bezier(.2,.9,.3,1.2) both; }
+.thumb.is-playing .ds-aa { animation: ds-pop .5s 1.45s cubic-bezier(.2,.9,.3,1.2) both; }
+.thumb.is-playing .ds-line { animation: ds-slide .45s calc(1.65s + var(--i) * .18s) cubic-bezier(.2,.7,.3,1) both; }
+.thumb.is-playing .ds-b { animation: ds-pop .45s calc(2.35s + var(--i) * .2s) cubic-bezier(.2,.9,.3,1.2) both; }
+.thumb.is-playing .ds-focus { animation: ds-ring .5s 3.25s ease-out both; }
+@keyframes ds-pop { from { opacity: 0; transform: translateY(1cqw) scale(.85); } }
+@keyframes ds-slide { from { opacity: 0; transform: translateX(-2cqw); } }
+@keyframes ds-ring { from { box-shadow: 0 0 0 .5cqw #fff, 0 0 0 .5cqw rgba(0,67,224,0); } }
+
+
+/* ---------- Oxford resources: card sorting becomes four groups ---------- */
+.rs-board { position: absolute; left: 6cqw; top: 10cqw; width: 88cqw; overflow: hidden; border-radius: 2cqw; background: #fff; box-shadow: 0 3cqw 8cqw rgba(0,33,71,.22), 0 0 0 .2cqw rgba(0,33,71,.08); color: #002147; font-family: "Open Sans", sans-serif; }
+.rs-top { display: flex; align-items: center; justify-content: space-between; height: 6.4cqw; padding: 0 3.4cqw; background: #002147; color: #fff; font-family: "DM Serif Display", serif; font-size: 3.1cqw; }
+.rs-top small { font-family: "Open Sans", sans-serif; font-size: 1.7cqw; font-weight: 600; opacity: .9; }
+.rs-cols { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.6cqw; padding: 2.6cqw 3.4cqw 2.8cqw; }
+.rs-col { display: flex; flex-direction: column; gap: 1.2cqw; }
+.rs-h { display: flex; align-items: center; height: 5.6cqw; padding: 0 1.3cqw; border-radius: 1cqw; background: #e6edf8; font-size: 1.65cqw; font-weight: 700; line-height: 1.15; }
+.rs-n { display: flex; align-items: flex-end; height: 8.6cqw; padding: 1.2cqw; border-radius: .8cqw; font-size: 2cqw; font-weight: 600; line-height: 1.15; box-shadow: 0 .4cqw 1cqw rgba(0,33,71,.16); }
+.rs-c1 .rs-n { background: #ffe12d; } .rs-c2 .rs-n { background: #bcd3f7; } .rs-c3 .rs-n { background: #c9e8b0; } .rs-c4 .rs-n { background: #f6c4bf; }
+
+.thumb.is-playing .rs-board { animation: tp-rise .6s cubic-bezier(.2,.7,.3,1) both; }
+.thumb.is-playing .rs-h { animation: ds-pop .5s calc(2.35s + var(--i) * .12s) cubic-bezier(.2,.9,.3,1.1) both; }
+.thumb.is-playing .rs-n { animation: rs-sort 2.2s calc(.5s + var(--j) * .06s) both; }
+@keyframes rs-sort {
+  0% { opacity: 0; transform: translate(var(--sx), var(--sy)) rotate(var(--sr)) scale(.6); }
+  18%, 46% { opacity: 1; transform: translate(var(--sx), var(--sy)) rotate(var(--sr)) scale(1); animation-timing-function: cubic-bezier(.3,.8,.3,1); }
+  100% { opacity: 1; transform: none; }
+}
+
+/* ---------- Oxford accessibility: keyboard focus, contrast, screen reader ---------- */
+.ax-board { position: absolute; left: 6cqw; top: 8cqw; width: 88cqw; padding: 3.2cqw 3.6cqw; display: grid; grid-template-columns: minmax(0, 1fr) 31cqw; gap: 2.6cqw 3.4cqw; border-radius: 2cqw; background: #fff; box-shadow: 0 3cqw 8cqw rgba(0,33,71,.22), 0 0 0 .2cqw rgba(0,33,71,.08); color: #002147; font-family: "Open Sans", sans-serif; }
+.ax-label { margin-bottom: 1.2cqw; font-size: 2.5cqw; font-weight: 700; }
+.ax-input { display: flex; align-items: center; height: 9cqw; padding: 0 2cqw; border: .4cqw solid #27455c; border-radius: 1cqw; background: #fff; font-size: 2.7cqw; color: #27455c; box-shadow: 0 0 0 .5cqw #fff, 0 0 0 1cqw #0043e0; }
+.ax-input i { display: inline-block; width: .35cqw; height: 4.4cqw; margin-right: 1cqw; background: #002147; }
+.ax-keyrow { display: flex; align-items: center; gap: 1.8cqw; margin-top: 2.6cqw; }
+.ax-key { display: inline-block; padding: 1.1cqw 2.8cqw; border-radius: 1.1cqw; background: #f2f4f7; box-shadow: 0 .6cqw 0 #c4ccd8, 0 0 0 .2cqw #c4ccd8; font-family: "Fira Sans", sans-serif; font-size: 2.3cqw; font-weight: 600; }
+.ax-hint { font-size: 2cqw; color: #27455c; }
+.ax-chips { display: flex; flex-direction: column; gap: 1.8cqw; }
+.ax-chip { display: flex; align-items: center; justify-content: space-between; flex: 1; padding: 0 2cqw; border-radius: 1.3cqw; font-size: 2.2cqw; font-weight: 700; }
+.ax-chip.c1 { background: #ffe12d; color: #002147; } .ax-chip.c2 { background: #1963b3; color: #fff; }
+.ax-chip em { display: inline-flex; align-items: center; gap: .9cqw; font-style: normal; }
+.ax-chip svg { width: 2.6cqw; height: 2.6cqw; }
+.ax-sr { grid-column: 1 / -1; display: flex; align-items: center; gap: 2cqw; padding: 2.3cqw 2.6cqw; border-radius: 1.5cqw; background: #002147; color: #fff; font-size: 2.4cqw; font-weight: 600; }
+.ax-sr svg { flex: 0 0 3.6cqw; width: 3.6cqw; height: 3.6cqw; }
+.ax-sr q { quotes: none; font-family: "SFMono-Regular", Consolas, monospace; font-weight: 400; color: #ffe12d; white-space: nowrap; }
+
+.thumb.is-playing .ax-board { animation: tp-rise .6s cubic-bezier(.2,.7,.3,1) both; }
+.thumb.is-playing .ax-key { animation: ax-press .45s .9s ease-in-out both; }
+.thumb.is-playing .ax-input { animation: ax-ring .5s 1.2s ease-out both; }
+.thumb.is-playing .ax-chip { animation: ds-pop .5s calc(1.9s + var(--i) * .3s) cubic-bezier(.2,.9,.3,1.15) both; }
+.thumb.is-playing .ax-sr { animation: ds-pop .5s 2.75s cubic-bezier(.2,.8,.3,1) both; }
+.thumb.is-playing .ax-sr q { animation: tp-type .8s 3.1s steps(26, end) both; }
+@keyframes ax-press { 50% { transform: translateY(.5cqw); box-shadow: 0 .1cqw 0 #c4ccd8, 0 0 0 .2cqw #c4ccd8; } }
+@keyframes ax-ring { from { box-shadow: 0 0 0 .5cqw #fff, 0 0 0 .5cqw rgba(0,67,224,0); border-color: #c4ccd8; } }
+
+/* ---------- Loading states ----------
+   html.js is set in <head>. Until thumbs.js arms a card it stays hidden, so the finished frame never flashes.
+   Without JS (no html.js) or with reduced motion (.is-static) the finished frame is shown. */
+html.js .thumb:not(.is-playing):not(.is-static) { visibility: hidden; }
+.thumb.is-armed * { animation-play-state: paused !important; }

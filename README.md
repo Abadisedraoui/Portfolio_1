@@ -24,3 +24,21 @@ Visual layout checked in the browser on desktop and in 390px / 320px frames. Sta
 ## Article thumbnails
 
 Each card in `articles.html` has a `.article-thumbnail` slot. Add an `<img>` inside it using a local image or GIF in `assets/`; the card’s aspect ratio controls its display. Captions contain only the content type and title.
+
+## Analytics and contact form
+
+- `consent.js`: shows a consent banner on first visit. Contentsquare (the Hotjar successor) only loads after Accept. "Cookie settings" in the footer reopens the choice. The choice is stored in `localStorage` under `za-analytics-consent`.
+- `contact.js`: "Let's chat" opens a native `<dialog>` form that posts to Formspree. Without JavaScript the link falls back to `mailto:`.
+- `privacy.html`: explains both services. Update it if either one changes.
+- The Contentsquare tag ID (`a67c74590d182`) is set in `consent.js`. There is no domain to register in Contentsquare; the tag only needs to be on the page. Do not run the Contentsquare install wizard here, because it adds the script without the consent check.
+- `extras.css`: styles for the banner, the dialog and the privacy page.
+
+## Animated thumbnails
+
+The four project cards on the home page draw their thumbnail in HTML/CSS instead of using an image (`thumbs.css`, scenes inline in `index.html`).
+- Each scene plays once when the card is at least 60% visible, and again on hover or keyboard focus (`thumbs.js`).
+- Reduced motion, or JavaScript off, shows the finished frame.
+- Sizes use `cqw`, so each scene scales with its card. Keep important content inside the central 80% and leave the bottom-left corner free for the "Read case study" pill.
+- Colours and type come from the public Oxford Premium site (navy #002147, blue #1963B3, bright blue #0043E0, yellow #FFE12D, slate #27455C, DM Serif Display, Open Sans, Fira Sans). Plytix uses its logo colours.
+- The names inside the resources scene, the Hover/Focus/Disabled button states and the Find & replace warning text are illustrative.
+- The static PNGs in `assets/` are still used on the case study pages.
