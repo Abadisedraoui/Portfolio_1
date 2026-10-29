@@ -110,3 +110,21 @@
 .articles-grid .article-card:hover h3, .articles-grid .article-card:focus-visible h3 { color: var(--brand); text-decoration: underline; }
 .articles-grid .article-card:focus-visible { outline: 3px solid var(--brand); outline-offset: 6px; }
 .thumbnail-placeholder { display: none; }
+
+/* 2026-10-29: case study intro facts, three decisions, takeaway */
+.facts { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); margin: 0 0 20px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.facts div { padding: 16px 20px 16px 0; }
+.facts div + div { padding-left: 20px; border-left: 1px solid var(--line); }
+.facts dt { margin: 0 0 4px; color: var(--muted); font-size: 13px; font-weight: 500; }
+.facts dd { margin: 0; font-size: 15px; line-height: 1.45; font-weight: 500; }
+.decisions-title { margin: 40px 0 16px; font-size: 22px; font-weight: 500; letter-spacing: -.035em; }
+.decisions { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 16px; margin: 0; padding: 0; list-style: none; }
+.decisions li { padding: 20px; border-radius: 18px; background: var(--surface); }
+.decision-n { display: block; margin-bottom: 10px; color: var(--muted); font-size: 13px; font-weight: 600; }
+.decisions h4 { margin: 0 0 8px; font-size: 17px; font-weight: 600; letter-spacing: -.02em; line-height: 1.3; }
+.decisions p { margin: 0; color: #4e5362; font-size: 15px; line-height: 1.55; }
+.takeaway { margin: 8px 0 56px; padding: 4px 0 4px 24px; border-left: 3px solid var(--brand); }
+.takeaway p { margin: 0; font-size: 22px; line-height: 1.4; font-weight: 500; letter-spacing: -.03em; }
+.study-section > p { max-width: 68ch; }
+@media (max-width: 1000px) { .facts { grid-template-columns: repeat(2, minmax(0,1fr)); } .facts div:nth-child(3) { padding-left: 0; border-left: 0; } .facts div:nth-child(n+3) { border-top: 1px solid var(--line); } .decisions { grid-template-columns: 1fr; } }
+@media (max-width: 520px) { .facts { grid-template-columns: 1fr; } .facts div, .facts div + div { padding-left: 0; border-left: 0; } .facts div + div { border-top: 1px solid var(--line); } .takeaway p { font-size: 19px; } }
