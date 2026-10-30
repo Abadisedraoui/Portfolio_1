@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Accessibility | Zainab Abadi</title><meta name="description" content="What is in place, what has been checked and what has not been checked yet for accessibility on this portfolio.">
+<meta name="theme-color" content="#fafafa"><link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=20261022-blue-motion"><link rel="stylesheet" href="glass.css?v=20261030a">
+<link rel="stylesheet" href="extras.css?v=20261028d">
+<link rel="stylesheet" href="type.css?v=20261030b">
+</head><body><div class="brand-atmosphere" aria-hidden="true"></div><a class="skip-link" href="#main">Skip to content</a>
+<header class="topbar"><nav class="dock-links" aria-label="Primary navigation"><a href="index.html">Projects</a><a href="articles.html">Articles</a><a href="about.html">About</a><a href="experiments.html">Experiments</a><a href="resume.html">Resume</a></nav></header>
+<a class="cv-bubble" href="assets/Zainab-Abadi-CV.pdf" download="Zainab-Abadi-CV.pdf" aria-label="Download CV (PDF)" title="Download CV (PDF)"><span>CV</span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M5 16v4h14v-4"/></svg></a>
+<main id="main"><section class="container hero" aria-labelledby="profile-name">
+  <a class="profile-link" href="index.html" aria-label="Zainab Abadi, home"><img class="profile-logo" src="assets/logo-white.png" width="663" height="582" alt="Zainab Abadi logo" fetchpriority="high"></a>
+  <h1 id="profile-name">Zainab Abadi</h1>
+  <p class="intro">Product &amp; UX/UI designer in Madrid. I work out why complex products are hard to use, then fix them, with research, accessibility and design systems.</p>
+  <div class="hero-actions"><a class="button" href="index.html#work">My latest work</a><a class="button button-secondary" href="mailto:zainab.abadi.s@gmail.com" data-contact>Let's chat</a></div>
+</section>
+<section class="container privacy-page" aria-labelledby="page-title">
+<h2 id="page-title">Accessibility</h2>
+<p>Accessibility is part of my job, so this portfolio should hold up to the same standard. I use WCAG 2.1 Level AA as the reference. This page says what is in place, what I have checked and what I have not checked yet. Last reviewed: 30 October 2026.</p>
+<h2>What is in place</h2>
+<ul>
+<li><strong>Keyboard:</strong> a skip link, visible focus outlines, and a contact form that opens as a native dialog and closes with Escape. The cookie choices can be reopened from the footer.</li>
+<li><strong>Contrast:</strong> body text is built to at least 4.5:1, and large text and form borders to at least 3:1.</li>
+<li><strong>Structure:</strong> headings in order, labelled form fields, a status message after you send a message, and text descriptions for images.</li>
+<li><strong>Motion:</strong> the logo ribbon and the animated project thumbnails stay still when your device asks for reduced motion. The ribbon also has a Pause button.</li>
+<li><strong>Text size:</strong> text is sized in rem, so it follows your browser's font size.</li>
+</ul>
+<h2>What I have checked</h2>
+<p>I measured text and background colours on every page, including text over the gradients, and fixed what fell short. I also checked the layouts from 320 to 1280 pixels wide in Chromium, with no horizontal scrolling.</p>
+<h2>What I have not checked yet</h2>
+<ul>
+<li>A full walk through every page with NVDA and VoiceOver.</li>
+<li>Browser zoom at 200% and 400%, and a real phone.</li>
+<li>Reduced motion on a real device.</li>
+<li>The structure of the downloadable CV (PDF).</li>
+</ul>
+<p>Some images in the case studies are slides from internal presentations. They have text descriptions, but the text inside the slides is not available as text, and some of it is in Spanish.</p>
+<h2>If something does not work for you</h2>
+<p>Email me at <a href="mailto:zainab.abadi.s@gmail.com">zainab.abadi.s@gmail.com</a> with the page and what went wrong, and I will look at it.</p>
+</section>
+</main>
+<footer class="footer"><div class="container footer-grid">
+  <div class="footer-profile"><a class="footer-name" href="index.html">Zainab Abadi</a><p>Product &amp; UX/UI designer in Madrid. I work out why complex products are hard to use, then fix them, with research, accessibility and design systems.</p><small>© 2026 Zainab Abadi · Madrid</small><small class="footer-credit">Vibe coded with Claude</small></div>
+  <nav class="footer-links" aria-label="Site information"><h2>This site</h2><a href="privacy.html">Privacy</a><a href="accessibility.html">Accessibility</a><button type="button" class="cookie-settings" data-cookie-settings>Cookie settings</button></nav>
+  <div class="footer-contact"><h2>Contact</h2><div class="email-line"><a href="mailto:zainab.abadi.s@gmail.com">zainab.abadi.s@gmail.com</a><button type="button" class="copy-email" data-copy-email="zainab.abadi.s@gmail.com" aria-label="Copy email address"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="3"/><path d="M15 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h3"/></svg></button></div><a href="mailto:zainab.abadi.s@gmail.com" data-contact>Let's chat <span aria-hidden="true">↗</span></a><a href="https://www.linkedin.com/in/zainab-abadi-7878951b0/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a><p id="copy-feedback" class="sr-only" role="status" aria-live="polite"></p></div>
+</div></footer>
+<script defer src="navigation.js?v=20261021-tabfolio"></script><script defer src="consent.js?v=20261028"></script><script defer src="contact.js?v=20261028c"></script>
+</body></html>

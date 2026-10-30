@@ -190,3 +190,13 @@ html.js .trust .ribbon:hover .ribbon-inner, html.js .trust .ribbon.is-paused .ri
 /* ---------- Evidence labels ---------- */
 .evidence-kind { display: inline-block; margin: 0 8px 4px 0; padding: 2px 12px; border-radius: 999px; background: #e6edf8; color: #27455c; font-size: var(--fs-caption); font-weight: 600; line-height: 22px; }
 .evidence-item figcaption { line-height: 1.5; }
+
+/* ---------- Footer credit, lists on text pages, document line in case studies ---------- */
+.footer-profile small { display: block; }
+.footer-profile small + small { margin-top: 4px; }
+.privacy-page ul { margin: 0 0 14px; padding-left: 22px; color: var(--muted); font-size: var(--fs-body); line-height: 1.65; }
+.privacy-page li { margin-bottom: 8px; }
+.privacy-page li strong { color: var(--ink); font-weight: 600; }
+.evidence-doc { margin: 20px 0 28px; }
+.evidence-doc a { color: var(--ink); font-weight: 600; text-decoration: underline; text-underline-offset: 4px; }
+.evidence-doc a:hover { color: var(--brand); }
