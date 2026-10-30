@@ -54,17 +54,7 @@
 .hero .intro { max-width: 520px; }
 .work-card { position: relative; }
 .card-art { transition: box-shadow .25s ease, transform .25s ease; }
-.card-art::after {
-  content: "Read case study \2197";
-  position: absolute; z-index: 2; left: 14px; bottom: 14px;
-  padding: 8px 14px; border-radius: 999px;
-  background: rgba(255,255,255,.92); color: var(--ink);
-  font-size: 13px; font-weight: 600; line-height: 18px;
-  box-shadow: 0 2px 10px rgba(7,19,28,.12);
-  transition: background .2s, color .2s;
-}
 .work-card:hover .card-art, .work-card:focus-visible .card-art { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(23,69,220,.22); }
-.work-card:hover .card-art::after, .work-card:focus-visible .card-art::after { background: var(--brand); color: #fff; }
 .work-card:hover h3 { color: var(--brand); }
 .work-card:focus-visible { outline: 3px solid var(--brand); outline-offset: 6px; }
 .work-meta h3 { font-size: 17px; color: var(--ink); }

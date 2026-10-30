@@ -30,6 +30,7 @@ Each card in `articles.html` has a `.article-thumbnail` slot. Add an `<img>` ins
 - `consent.js`: shows a consent banner on first visit. Contentsquare (the Hotjar successor) only loads after Accept. "Cookie settings" in the footer reopens the choice. The choice is stored in `localStorage` under `za-analytics-consent`.
 - `contact.js`: "Let's chat" opens a native `<dialog>` form that posts to Formspree. Without JavaScript the link falls back to `mailto:`.
 - `privacy.html`: explains both services. Update it if either one changes.
+- `accessibility.html`: the accessibility statement. It says what is in place, what was checked and what was not. Update "Last reviewed" and the lists whenever the site or the testing changes.
 - The Contentsquare tag ID (`a67c74590d182`) is set in `consent.js`. There is no domain to register in Contentsquare; the tag only needs to be on the page. Do not run the Contentsquare install wizard here, because it adds the script without the consent check.
 - `extras.css`: styles for the banner, the dialog and the privacy page.
 

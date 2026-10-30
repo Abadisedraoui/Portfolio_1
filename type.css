@@ -1,0 +1,202 @@
+/* Type scale and contrast fixes. Loaded last on every page, so it wins over the older px values.
+   Sizes are in rem: they follow the reader's browser font size (WCAG 1.4.4).
+   9 steps only. Use a token, not a new number. Values in px assume the default 16px root. */
+:root {
+  --fs-caption: .875rem;   /* 14  chips, eyebrows, notes */
+  --fs-small:   1rem;      /* 16  secondary text, nav, captions */
+  --fs-ui:      1.0625rem; /* 17  buttons, footer links */
+  --fs-body:    1.125rem;  /* 18  paragraphs */
+  --fs-lead:    1.3125rem; /* 21  intros and ledes */
+  --fs-h4:      1.375rem;  /* 22  card and item titles */
+  --fs-h3:      1.625rem;  /* 26  sub-sections, pull quotes */
+  --fs-h2:      2.125rem;  /* 34  section titles */
+  --fs-h1:      3rem;      /* 48  page title */
+
+  /* Contrast: secondary text darkened from #60646f (5.7:1) to #565b68 (6.6:1 on #fafafa, 6.0:1 on #f0f0f3). */
+  --muted: #565b68;
+  --field-border: #757c8a; /* 4.1:1 on white: form fields need 3:1 (WCAG 1.4.11); the old #cfd3dc gave 1.5:1 */
+}
+
+body { font-size: var(--fs-body); line-height: 1.55; }
+
+/* ---------- Header, hero, buttons ---------- */
+.dock-links a { font-size: var(--fs-small); padding: 8px 14px; }
+.hero h1 { font-size: var(--fs-h1); line-height: 1.08; }
+.hero .intro, .intro { max-width: 34rem; font-size: var(--fs-lead); line-height: 1.45; }
+.button { min-height: 48px; padding: 12px 18px; font-size: var(--fs-ui); }
+.cv-bubble { font-size: var(--fs-small); min-height: 54px; }
+.eyebrow { font-size: var(--fs-caption); }
+.skip-link { font-size: var(--fs-ui); }
+
+/* ---------- Home: trust strip, facts, project cards ---------- */
+.trust p { font-size: var(--fs-small); }
+.trust li { font-size: var(--fs-body); }
+.trust img { width: 38px; height: 38px; }
+.glance dt { font-size: var(--fs-caption); }
+.glance dd { font-size: var(--fs-ui); line-height: 1.4; }
+.work-meta { font-size: var(--fs-body); line-height: 1.4; }
+.work-meta h3 { font-size: var(--fs-h4); line-height: 1.3; }
+.year { font-size: var(--fs-small); }
+.chips li { font-size: var(--fs-caption); padding: 4px 12px; line-height: 20px; }
+.chips-lg li { font-size: var(--fs-small); padding: 6px 16px; }
+
+/* names without a logo, set as plain text */
+.nw { white-space: nowrap; }
+.trust .trust-more { margin: 18px 0 0; max-width: 46rem; font-size: var(--fs-small); line-height: 1.55; }
+
+/* ---------- Sections and footer ---------- */
+.section-heading h2 { font-size: var(--fs-h2); }
+.section-heading p { font-size: var(--fs-small); }
+.coming-panel h2 { font-size: var(--fs-h2); }
+.coming-panel > p:not(.eyebrow) { font-size: var(--fs-body); }
+.footer-name { font-size: var(--fs-h4); }
+.footer h2 { font-size: var(--fs-small); }
+.footer-links, .footer-contact { font-size: var(--fs-ui); gap: 8px; }
+.footer-profile p { font-size: var(--fs-body); }
+.footer-profile small { font-size: var(--fs-small); }
+.footer-links .cookie-settings { font-size: var(--fs-ui); }
+
+/* ---------- About ---------- */
+.about-story-copy h2 { font-size: var(--fs-h2); line-height: 1.25; }
+.about-story-copy p { font-size: var(--fs-body); line-height: 1.6; }
+.about-story-copy p.lede { font-size: var(--fs-lead); line-height: 1.5; }
+.about-photo figcaption { font-size: var(--fs-small); }
+.collectible h3 { font-size: var(--fs-h4); }
+.collectible p { font-size: var(--fs-small); line-height: 1.55; }
+.collectible-top span { font-size: var(--fs-caption); }
+
+/* ---------- Case studies ---------- */
+.project-hero h1 { font-size: clamp(2.25rem, 4.6vw, 3.5rem); }
+.project-hero .lede { font-size: var(--fs-lead); }
+.quick-scan-head h2 { font-size: var(--fs-h2); }
+.quick-cell h3 { font-size: var(--fs-small); }
+.quick-cell p { font-size: var(--fs-body); color: #4e5362; }
+.facts dt { font-size: var(--fs-caption); }
+.facts dd { font-size: var(--fs-ui); }
+.decisions-title { font-size: var(--fs-h3); }
+.decision-n { font-size: var(--fs-caption); }
+.decisions h4 { font-size: var(--fs-h4); }
+.decisions p { font-size: var(--fs-small); color: #4e5362; }
+.study-layout { grid-template-columns: 260px minmax(0, 1fr); }
+.study-toc h2 { font-size: var(--fs-h3); }
+.study-toc ol { font-size: var(--fs-small); }
+.study-section h2 { font-size: var(--fs-h2); line-height: 1.2; }
+.study-section > p { font-size: var(--fs-lead); line-height: 1.65; max-width: 62ch; }
+.takeaway p { font-size: var(--fs-h3); }
+.evidence-item figcaption { font-size: var(--fs-small); }
+.note { font-size: var(--fs-small); }
+.underlined, .jump-link { font-size: var(--fs-small); }
+.next-project h2 { font-size: var(--fs-h2); }
+
+/* ---------- Resume ---------- */
+.resume-section > h2 { font-size: var(--fs-h2); }
+.resume-role h3, .resume-entry h3 { font-size: var(--fs-h4); }
+.resume-meta { font-size: var(--fs-small); }
+.resume-role-copy > p:not(.resume-meta), .resume-role > p:not(.resume-meta), .resume-entry > p:not(.resume-meta) { font-size: var(--fs-body); line-height: 1.6; }
+.earlier-experience summary { font-size: var(--fs-small); }
+.tools-grid h3 { font-size: var(--fs-ui); }
+.tools-grid p, .additional-tools { font-size: var(--fs-small); }
+.skills-groups h3 { font-size: var(--fs-small); }
+.skills-list li { font-size: var(--fs-ui); }
+.how-i-work p { font-size: var(--fs-lead); }
+
+/* ---------- Articles ---------- */
+.articles-grid .article-kind { font-size: var(--fs-small); }
+.articles-grid .article-caption h3 { font-size: var(--fs-h4); }
+
+/* ---------- Consent banner, contact dialog, privacy ---------- */
+.consent-banner { width: min(26rem, calc(100% - 32px)); }
+.consent-banner h2 { font-size: var(--fs-h4); }
+.consent-banner p { font-size: var(--fs-small); }
+.contact-head h2, .contact-done h2 { font-size: var(--fs-h3); }
+.contact-note { font-size: var(--fs-small); }
+.contact-form label { font-size: var(--fs-small); }
+.contact-form input:not(.contact-trap), .contact-form textarea { font-size: var(--fs-body); border-color: var(--field-border); }
+.contact-fine { font-size: var(--fs-caption); }
+.contact-status { font-size: var(--fs-small); }
+.contact-done p { font-size: var(--fs-body); }
+.privacy-page h2 { font-size: var(--fs-h3); }
+.privacy-page p { font-size: var(--fs-body); line-height: 1.65; }
+
+/* ---------- Small screens ---------- */
+@media (max-width: 760px) {
+  .hero h1 { font-size: 2.5rem; }
+  .dock-links { flex-wrap: wrap; justify-content: center; }
+  .dock-links a { font-size: var(--fs-small); padding: 8px 12px; }
+  .section-heading h2, .about-story-copy h2, .study-section h2, .resume-section > h2 { font-size: 1.875rem; }
+  .study-layout { grid-template-columns: 1fr; }
+}
+/* below ~830px the centred nav gets close to the logo (and can wrap on phones): push the page down */
+@media (max-width: 830px) {
+  .hero { padding-top: 132px; }
+  .project-hero { padding-top: 140px; }
+}
+@media (max-width: 480px) {
+  .hero h1 { font-size: 2.25rem; }
+  .hero .intro, .intro { font-size: 1.1875rem; }
+  /* 3 + 2 instead of 4 + 1 */
+  .dock-links { display: grid; grid-template-columns: repeat(3, auto); justify-content: center; justify-items: center; }
+  .dock-links a { font-size: var(--fs-small); padding: 8px 12px; }
+}
+@media (max-width: 340px) {
+  .dock-links a { padding: 8px 8px; }
+}
+
+/* ---------- Resume bullet lists ---------- */
+.resume-bullets { margin: 0 0 12px; padding: 0; list-style: none; max-width: 62rem; }
+.resume-bullets li { position: relative; margin: 0 0 .6em; padding-left: 1.3em; font-size: var(--fs-body); line-height: 1.55; color: var(--muted); }
+.resume-bullets li::before { content: ""; position: absolute; left: .15em; top: .68em; width: .42em; height: .42em; border-radius: 50%; background: var(--brand); }
+.resume-role > p:not(.resume-meta) { margin-top: 4px; }
+
+/* ---------- "Worked with" logo ribbon ----------
+   Static and wrapped by default (no JS, reduced motion). With JS it scrolls slowly; it stops on hover
+   and with the Pause button (WCAG 2.2.2). The second list is a visual copy, hidden from screen readers. */
+.trust .trust-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 14px; }
+.trust .trust-head p { margin: 0; }
+.ribbon-toggle { display: none; align-items: center; gap: 10px; min-height: 44px; padding: 8px 16px; border: 1px solid var(--field-border); border-radius: 999px; background: transparent; color: var(--ink); font: inherit; font-size: var(--fs-small); cursor: pointer; }
+.ribbon-toggle:hover { background: #eeeef3; }
+.ribbon-toggle-icon { width: 10px; height: 12px; border-left: 3px solid currentColor; border-right: 3px solid currentColor; }
+.ribbon-toggle.is-paused .ribbon-toggle-icon { width: 0; height: 0; border: 0; border-top: 7px solid transparent; border-bottom: 7px solid transparent; border-left: 11px solid currentColor; }
+html.js .ribbon-toggle { display: inline-flex; }
+
+.trust .ribbon { --k: 1; position: relative; overflow: hidden; }
+.trust .ribbon-inner { display: flex; flex-wrap: wrap; }
+.trust .ribbon-list { display: flex; flex-wrap: wrap; align-items: center; gap: 24px 56px; margin: 0; padding: 0; list-style: none; }
+.trust .ribbon-list li { display: flex; align-items: center; flex: 0 0 auto; min-height: 48px; gap: 0; font-size: inherit; }
+.trust .ribbon-dup { display: none; }
+.trust .rl { display: block; height: auto; max-width: none; filter: grayscale(1) contrast(1.12); transition: filter .2s; }
+.trust .ribbon-list li:hover .rl, .trust .ribbon-list li:hover .rl-mark img { filter: none; }
+.trust .rl-zara { width: calc(150px * var(--k)); } .trust .rl-sheedo { width: calc(150px * var(--k)); }
+.trust .rl-regalador { width: calc(150px * var(--k)); } .trust .rl-ipsik { width: calc(62px * var(--k)); }
+.trust .rl-pop { width: calc(176px * var(--k)); } .trust .rl-alma { width: calc(190px * var(--k)); } .trust .rl-cam { width: calc(124px * var(--k)); }
+.trust .rl-mark { display: flex; align-items: center; gap: 10px; font-size: var(--fs-body); font-weight: 600; letter-spacing: -.02em; white-space: nowrap; color: var(--ink); }
+.trust .rl-mark img { width: calc(34px * var(--k)); height: calc(34px * var(--k)); filter: grayscale(1); transition: filter .2s; }
+.trust .rl-text { font-size: var(--fs-h4); font-weight: 700; letter-spacing: -.03em; white-space: nowrap; color: var(--ink); }
+
+html.js .trust .ribbon { -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
+html.js .trust .ribbon-inner { flex-wrap: nowrap; width: max-content; animation: ribbon-scroll 60s linear infinite; }
+html.js .trust .ribbon-list { flex-wrap: nowrap; flex: 0 0 auto; padding: 0 28px; }
+html.js .trust .ribbon-dup { display: flex; }
+html.js .trust .ribbon:hover .ribbon-inner, html.js .trust .ribbon.is-paused .ribbon-inner { animation-play-state: paused; }
+@keyframes ribbon-scroll { to { transform: translateX(-50%); } }
+@media (max-width: 600px) { .trust .ribbon { --k: .82; } .trust .ribbon-list { gap: 24px 40px; } }
+@media (prefers-reduced-motion: reduce) {
+  html.js .trust .ribbon { -webkit-mask-image: none; mask-image: none; }
+  html.js .trust .ribbon-inner { animation: none; flex-wrap: wrap; width: auto; }
+  html.js .trust .ribbon-list { flex-wrap: wrap; padding: 0; }
+  html.js .trust .ribbon-dup, html.js .ribbon-toggle { display: none; }
+}
+
+/* ---------- Evidence labels ---------- */
+.evidence-kind { display: inline-block; margin: 0 8px 4px 0; padding: 2px 12px; border-radius: 999px; background: #e6edf8; color: #27455c; font-size: var(--fs-caption); font-weight: 600; line-height: 22px; }
+.evidence-item figcaption { line-height: 1.5; }
+
+/* ---------- Footer credit, lists on text pages, document line in case studies ---------- */
+.footer-profile small { display: block; }
+.footer-profile small + small { margin-top: 4px; }
+.privacy-page ul { margin: 0 0 14px; padding-left: 22px; color: var(--muted); font-size: var(--fs-body); line-height: 1.65; }
+.privacy-page li { margin-bottom: 8px; }
+.privacy-page li strong { color: var(--ink); font-weight: 600; }
+.evidence-doc { margin: 20px 0 28px; }
+.evidence-doc a { color: var(--ink); font-weight: 600; text-decoration: underline; text-underline-offset: 4px; }
+.evidence-doc a:hover { color: var(--brand); }
