@@ -61,9 +61,8 @@ body { font-size: var(--fs-body); line-height: 1.55; }
 .about-story-copy p { font-size: var(--fs-body); line-height: 1.6; }
 .about-story-copy p.lede { font-size: var(--fs-lead); line-height: 1.5; }
 .about-photo figcaption { font-size: var(--fs-small); }
-.collectible h3 { font-size: var(--fs-h4); }
-.collectible p { font-size: var(--fs-small); line-height: 1.55; }
-.collectible-top span { font-size: var(--fs-caption); }
+.life-item h3 { font-size: var(--fs-h4); }
+.life-item p { font-size: var(--fs-small); line-height: 1.55; }
 
 /* ---------- Case studies ---------- */
 .project-hero h1 { font-size: clamp(2.25rem, 4.6vw, 3.5rem); }
