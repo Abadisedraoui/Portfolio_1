@@ -59,7 +59,6 @@ body { font-size: var(--fs-body); line-height: 1.55; }
 /* ---------- About ---------- */
 .about-story-copy h2 { font-size: var(--fs-h2); line-height: 1.25; }
 .about-story-copy p { font-size: var(--fs-body); line-height: 1.6; }
-.about-story-copy p.lede { font-size: var(--fs-lead); line-height: 1.5; }
 .about-photo figcaption { font-size: var(--fs-small); }
 .life-item h3 { font-size: var(--fs-h4); }
 .life-item p { font-size: var(--fs-small); line-height: 1.55; }
@@ -199,3 +198,8 @@ html.js .trust .ribbon:hover .ribbon-inner, html.js .trust .ribbon.is-paused .ri
 .evidence-doc { margin: 20px 0 28px; }
 .evidence-doc a { color: var(--ink); font-weight: 600; text-decoration: underline; text-underline-offset: 4px; }
 .evidence-doc a:hover { color: var(--brand); }
+
+/* ---------- Highlighted phrases in the About text ----------
+   Bold dark text on the light blue of the current menu item: 10.7:1 (muted text on this blue would only reach 4.1:1). */
+.hl { font-weight: 700; color: var(--ink); background: #78cef4; padding: .04em .3em; border-radius: .4em; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+@media (forced-colors: active) { .hl { background: none; } }
