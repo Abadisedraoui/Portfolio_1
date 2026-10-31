@@ -33,7 +33,8 @@
   transition: background .18s,color .18s,box-shadow .18s;
 }
 .dock-links a:hover { color: var(--ink); background: rgb(var(--brand-blue) / .14); }
-.dock-links a.is-current { color: var(--ink); font-weight: 700; background: #4ebeef; box-shadow: inset 0 0 0 1.5px #0a62b0; }
+.dock-links a.is-current { color: var(--ink); font-weight: 700; background: #78cef4; }
+.dock-links a:active { box-shadow: inset 0 0 0 1.5px #0a62b0; }
 .card-art-1 { --thumb-green-position: 0% 100%; --thumb-lilac-position: 100% 0%; --thumb-angle: 135deg; }
 .card-art-2 { --thumb-green-position: 100% 100%; --thumb-lilac-position: 0% 0%; --thumb-angle: 215deg; }
 .card-art-3 { --thumb-green-position: 0% 0%; --thumb-lilac-position: 100% 100%; --thumb-angle: 35deg; }
