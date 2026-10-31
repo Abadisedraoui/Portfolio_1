@@ -32,8 +32,9 @@
   white-space: nowrap;
   transition: background .18s,color .18s,box-shadow .18s;
 }
-.dock-links a:hover { color: var(--ink); background: rgba(255,255,255,.35); }
-.dock-links a.is-current { color: var(--ink); background: rgba(255,255,255,.8); box-shadow: 0 1px 5px rgba(20,20,40,.035); }
+.dock-links a:hover { color: var(--ink); background: rgb(var(--brand-blue) / .14); }
+.dock-links a.is-current { color: var(--ink); font-weight: 700; background: #78cef4; }
+.dock-links a:active { box-shadow: inset 0 0 0 1.5px #0a62b0; }
 .card-art-1 { --thumb-green-position: 0% 100%; --thumb-lilac-position: 100% 0%; --thumb-angle: 135deg; }
 .card-art-2 { --thumb-green-position: 100% 100%; --thumb-lilac-position: 0% 0%; --thumb-angle: 215deg; }
 .card-art-3 { --thumb-green-position: 0% 0%; --thumb-lilac-position: 100% 100%; --thumb-angle: 35deg; }
@@ -89,8 +90,6 @@
 .about-carousel-viewport { height: auto; aspect-ratio: 4 / 5; }
 .about-carousel .about-portrait { object-position: center center; }
 .about-carousel-slide .about-portrait[src$=".gif"] { object-fit: contain; }
-.collectible { align-self: stretch; }
-.collectible img { aspect-ratio: auto; height: auto; }
 @media (max-width: 1000px) { .glance dl { grid-template-columns: repeat(2, minmax(0,1fr)); } .glance div:nth-child(3) { padding-left: 0; border-left: 0; } .glance div:nth-child(n+3) { border-top: 1px solid var(--line); } }
 @media (max-width: 520px) { .glance { padding-bottom: 24px; } .glance dl { grid-template-columns: repeat(2, minmax(0,1fr)); } .glance div { padding: 12px 12px 12px 0; } .glance div + div { padding-left: 12px; } .glance div:nth-child(3) { padding-left: 0; border-left: 0; } .glance dt { font-size: 12px; } .glance dd { font-size: 13.5px; line-height: 1.4; } .resume-role--feature { padding: 18px !important; } }
 
