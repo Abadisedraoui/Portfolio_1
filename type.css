@@ -199,7 +199,7 @@ html.js .trust .ribbon:hover .ribbon-inner, html.js .trust .ribbon.is-paused .ri
 .evidence-doc a { color: var(--ink); font-weight: 600; text-decoration: underline; text-underline-offset: 4px; }
 .evidence-doc a:hover { color: var(--brand); }
 
-/* ---------- Highlighted phrases in the About text ----------
-   Bold dark text on the light blue of the current menu item: 10.7:1 (muted text on this blue would only reach 4.1:1). */
-.hl { font-weight: 700; color: var(--ink); background: #78cef4; padding: .06em .5em; border-radius: 999px; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
-@media (forced-colors: active) { .hl { background: none; } }
+/* ---------- Key phrases in the About text ----------
+   Bold, in the blue of the menu (#78cef4) darkened along the same hue until it reads as text: #0e78a7 is 4.7:1 on #fafafa.
+   The menu blue itself is only 1.7:1 on that background, so it is used as a fill there and never as text colour. */
+.hl { font-weight: 700; color: #0e78a7; }
