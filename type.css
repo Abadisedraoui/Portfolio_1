@@ -204,20 +204,18 @@ html.js .trust .ribbon:hover .ribbon-inner, html.js .trust .ribbon.is-paused .ri
    The menu blue itself is only 1.7:1 on that background, so it is used as a fill there and never as text colour. */
 .hl { font-weight: 700; color: #0e78a7; }
 
-/* ---------- Case study reading ----------
-   Short paragraphs, a narrower line, more space between lines and words, left aligned, off-black text (#2b3440 on #fafafa is 11:1). */
-.study-section > p, .study-section > ul { max-width: 60ch; margin: 0 0 1.1em; color: #2b3440; font-weight: 500; font-size: var(--fs-lead); line-height: 1.7; letter-spacing: .01em; word-spacing: .06em; text-align: left; }
+/* ---------- Case study body ----------
+   Same size, weight and colour as the At a glance cells (18px, regular, #4e5362: 7.5:1 on #fafafa), so the deep dive does not look bigger than the summary.
+   Short paragraphs and lists only add spacing. */
+.study-section > p, .study-section > ul { font-size: var(--fs-body); line-height: 1.65; max-width: 66ch; color: #4e5362; margin: 0 0 1em; }
 .study-section > p:last-child, .study-section > ul:last-child { margin-bottom: 0; }
 .study-section > ul { padding-left: 1.3em; }
 .study-section > ul li { margin-bottom: .45em; padding-left: .2em; }
-.study-section > ul li::marker { color: #0e78a7; }
 .quick-cell ul { margin: 8px 0 0; padding-left: 1.2em; color: #4e5362; font-size: var(--fs-body); line-height: 1.55; }
 .quick-cell p + ul { margin-top: 10px; }
 .quick-cell li { margin-bottom: .3em; padding-left: .2em; }
-.quick-cell li::marker { color: #0e78a7; }
 .facts dd ul { margin: 4px 0 0; padding-left: 1.1em; }
 .facts dd li { margin-bottom: .15em; }
-.facts dd li::marker { color: #0e78a7; }
 
 /* ---------- Footer: "Find me" ---------- */
 .footer-contact h3 { margin: 18px 0 0; font-size: var(--fs-small); font-weight: 500; line-height: 24px; color: var(--muted); }
