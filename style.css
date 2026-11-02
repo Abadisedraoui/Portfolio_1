@@ -45,7 +45,7 @@ img { display: block; max-width: 100%; }
 .hero { padding-top: 40px; padding-bottom: 60px; }
 .profile-link { display: block; position: relative; width: 116px; }
 .profile-logo { width: 100%; height: auto; filter: brightness(0); transition: opacity .2s ease; }
-.profile-link::after { content: ""; position: absolute; inset: 0 0 auto; aspect-ratio: 663 / 582; background: var(--brand); -webkit-mask: url(assets/logo-white.png) center / 100% 100% no-repeat; mask: url(assets/logo-white.png) center / 100% 100% no-repeat; opacity: 0; transition: opacity .2s ease; pointer-events: none; }
+.profile-link::after { content: ""; position: absolute; inset: 0 0 auto; aspect-ratio: 663 / 582; background: #0e78a7; -webkit-mask: url(assets/logo-white.png) center / 100% 100% no-repeat; mask: url(assets/logo-white.png) center / 100% 100% no-repeat; opacity: 0; transition: opacity .2s ease; pointer-events: none; }
 @media (hover: hover) { .profile-link:hover::after { opacity: 1; } .profile-link:hover .profile-logo { opacity: 0; } }
 .hero h1 { margin: 20px 0 10px; font-size: 40px; font-weight: 500; line-height: 1.1; letter-spacing: -.045em; }
 .intro { max-width: 450px; margin: 0; font-size: 16px; line-height: 24px; color: var(--muted); }
