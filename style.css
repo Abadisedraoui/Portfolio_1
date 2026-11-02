@@ -43,8 +43,10 @@ img { display: block; max-width: 100%; }
 .skip-link { position: fixed; top: 12px; left: 16px; z-index: 200; padding: 10px 16px; border-radius: 10px; background: var(--ink); color: white; transform: translateY(-180%); }
 .skip-link:focus { transform: translateY(0); }
 .hero { padding-top: 40px; padding-bottom: 60px; }
-.profile-link { display: block; width: 116px; }
-.profile-logo { width: 100%; height: auto; filter: brightness(0); }
+.profile-link { display: block; position: relative; width: 116px; }
+.profile-logo { width: 100%; height: auto; filter: brightness(0); transition: opacity .2s ease; }
+.profile-link::after { content: ""; position: absolute; inset: 0 0 auto; aspect-ratio: 663 / 582; background: var(--brand); -webkit-mask: url(assets/logo-white.png) center / 100% 100% no-repeat; mask: url(assets/logo-white.png) center / 100% 100% no-repeat; opacity: 0; transition: opacity .2s ease; pointer-events: none; }
+@media (hover: hover) { .profile-link:hover::after { opacity: 1; } .profile-link:hover .profile-logo { opacity: 0; } }
 .hero h1 { margin: 20px 0 10px; font-size: 40px; font-weight: 500; line-height: 1.1; letter-spacing: -.045em; }
 .intro { max-width: 450px; margin: 0; font-size: 16px; line-height: 24px; color: var(--muted); }
 .hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
