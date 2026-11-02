@@ -211,3 +211,10 @@ html.js .trust .ribbon:hover .ribbon-inner, html.js .trust .ribbon.is-paused .ri
 .study-section > ul { padding-left: 1.3em; }
 .study-section > ul li { margin-bottom: .45em; padding-left: .2em; }
 .study-section > ul li::marker { color: #0e78a7; }
+.quick-cell ul { margin: 8px 0 0; padding-left: 1.2em; color: #4e5362; font-size: var(--fs-body); line-height: 1.55; }
+.quick-cell p + ul { margin-top: 10px; }
+.quick-cell li { margin-bottom: .3em; padding-left: .2em; }
+.quick-cell li::marker { color: #0e78a7; }
+.facts dd ul { margin: 4px 0 0; padding-left: 1.1em; }
+.facts dd li { margin-bottom: .15em; }
+.facts dd li::marker { color: #0e78a7; }
