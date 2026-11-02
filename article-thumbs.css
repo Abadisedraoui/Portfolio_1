@@ -17,8 +17,6 @@
 @keyframes at-travel{0%{offset-distance:0%;opacity:0}6%,8%{offset-distance:0%;opacity:1}50%{offset-distance:100%;opacity:1}56%,100%{offset-distance:100%;opacity:0}}
 @keyframes at-wipe{0%,8%{transform:translateX(-680px)}55%,100%{transform:translateX(0)}}
 @keyframes at-handle{0%,8%{transform:translateX(120px);opacity:1}55%{transform:translateX(680px);opacity:1}62%,100%{transform:translateX(680px);opacity:0}}
-@keyframes at-pop37{0%,37%{opacity:0;transform:scale(0)}41%{opacity:1;transform:scale(1.14)}45%,90%{opacity:1;transform:scale(1)}96%,100%{opacity:0;transform:scale(.92)}}
-@keyframes at-pop43{0%,43%{opacity:0;transform:scale(0)}47%{opacity:1;transform:scale(1.14)}51%,90%{opacity:1;transform:scale(1)}96%,100%{opacity:0;transform:scale(.92)}}
 @keyframes at-draw5_26{0%,5%{stroke-dashoffset:100;opacity:1}31%,90%{stroke-dashoffset:0;opacity:1}96%,100%{stroke-dashoffset:0;opacity:0}}
 @keyframes at-draw13_26{0%,13%{stroke-dashoffset:100;opacity:1}39%,90%{stroke-dashoffset:0;opacity:1}96%,100%{stroke-dashoffset:0;opacity:0}}
 @keyframes at-draw22_26{0%,22%{stroke-dashoffset:100;opacity:1}48%,90%{stroke-dashoffset:0;opacity:1}96%,100%{stroke-dashoffset:0;opacity:0}}
@@ -57,6 +55,8 @@
 @keyframes at-pop17{0%,17%{opacity:0;transform:scale(0)}21%{opacity:1;transform:scale(1.14)}25%,90%{opacity:1;transform:scale(1)}96%,100%{opacity:0;transform:scale(.92)}}
 @keyframes at-pop50{0%,50%{opacity:0;transform:scale(0)}54%{opacity:1;transform:scale(1.14)}58%,90%{opacity:1;transform:scale(1)}96%,100%{opacity:0;transform:scale(.92)}}
 @keyframes at-pop25{0%,25%{opacity:0;transform:scale(0)}29%{opacity:1;transform:scale(1.14)}33%,90%{opacity:1;transform:scale(1)}96%,100%{opacity:0;transform:scale(.92)}}
+@keyframes at-pop37{0%,37%{opacity:0;transform:scale(0)}41%{opacity:1;transform:scale(1.14)}45%,90%{opacity:1;transform:scale(1)}96%,100%{opacity:0;transform:scale(.92)}}
+@keyframes at-pop43{0%,43%{opacity:0;transform:scale(0)}47%{opacity:1;transform:scale(1.14)}51%,90%{opacity:1;transform:scale(1)}96%,100%{opacity:0;transform:scale(.92)}}
 @keyframes at-grow23{0%,23%{opacity:0;transform:scale(0)}33%,90%{opacity:1;transform:scale(1)}96%,100%{opacity:0;transform:scale(.9)}}
 @keyframes at-pop30{0%,30%{opacity:0;transform:scale(0)}34%{opacity:1;transform:scale(1.14)}38%,90%{opacity:1;transform:scale(1)}96%,100%{opacity:0;transform:scale(.92)}}
 @keyframes at-grow17{0%,17%{opacity:0;transform:scale(0)}27%,90%{opacity:1;transform:scale(1)}96%,100%{opacity:0;transform:scale(.9)}}
