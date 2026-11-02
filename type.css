@@ -217,5 +217,3 @@ html.js .trust .ribbon:hover .ribbon-inner, html.js .trust .ribbon.is-paused .ri
 .facts dd ul { margin: 4px 0 0; padding-left: 1.1em; }
 .facts dd li { margin-bottom: .15em; }
 
-/* ---------- Footer: "Find me" ---------- */
-.footer-contact h3 { margin: 18px 0 0; font-size: var(--fs-small); font-weight: 500; line-height: 24px; color: var(--muted); }
