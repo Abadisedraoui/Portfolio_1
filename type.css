@@ -203,3 +203,11 @@ html.js .trust .ribbon:hover .ribbon-inner, html.js .trust .ribbon.is-paused .ri
    Bold, in the blue of the menu (#78cef4) darkened along the same hue until it reads as text: #0e78a7 is 4.7:1 on #fafafa.
    The menu blue itself is only 1.7:1 on that background, so it is used as a fill there and never as text colour. */
 .hl { font-weight: 700; color: #0e78a7; }
+
+/* ---------- Case study reading ----------
+   Short paragraphs, a narrower line, more space between lines and words, left aligned, off-black text (#2b3440 on #fafafa is 11:1). */
+.study-section > p, .study-section > ul { max-width: 60ch; margin: 0 0 1.1em; color: #2b3440; font-weight: 500; font-size: var(--fs-lead); line-height: 1.7; letter-spacing: .01em; word-spacing: .06em; text-align: left; }
+.study-section > p:last-child, .study-section > ul:last-child { margin-bottom: 0; }
+.study-section > ul { padding-left: 1.3em; }
+.study-section > ul li { margin-bottom: .45em; padding-left: .2em; }
+.study-section > ul li::marker { color: #0e78a7; }
