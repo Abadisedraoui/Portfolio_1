@@ -1,0 +1,26 @@
+/* Evidence galleries: one image at a time with arrows (swipe on touch, arrow keys when focused). Nothing moves on its own. */
+.evidence-lead { margin: 24px 0 0; padding: 20px; border-radius: 16px; background: var(--surface); }
+.evidence-lead img { display: block; width: 100%; height: auto; border-radius: 8px; }
+.evidence-text { display: block; margin-top: 8px; }
+.gallery { margin-top: 24px; }
+.gallery-track { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; border-radius: 16px; }
+.gallery-track::-webkit-scrollbar { display: none; }
+.gallery-track:focus-visible { outline: 3px solid var(--brand); outline-offset: 4px; }
+.gal-slide { flex: 0 0 100%; box-sizing: border-box; margin: 0; padding: 20px; border-radius: 16px; background: var(--surface); scroll-snap-align: start; }
+.gal-slide a { display: block; }
+.gal-slide img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: contain; border-radius: 8px; }
+.gal-slide figcaption { margin-top: 16px; font-size: var(--fs-small); line-height: 1.5; color: var(--muted); }
+.gallery-per-3 .gal-slide { flex-basis: calc((100% - 32px) / 3); padding: 14px; }
+.gallery-per-3 .gal-slide img { aspect-ratio: auto; height: auto; }
+.gallery-bar { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 14px; }
+.gal-btn { display: grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 1px solid var(--field-border); border-radius: 50%; background: transparent; color: var(--ink); cursor: pointer; }
+.gal-btn:hover:not(:disabled) { background: #e8f4fc; }
+.gal-btn:focus-visible { outline: 3px solid var(--brand); outline-offset: 3px; }
+.gal-btn:disabled { opacity: .35; cursor: default; }
+.gal-count { min-width: 6em; margin: 0; text-align: center; font-size: var(--fs-small); color: var(--muted); }
+.gallery.is-static .gallery-bar { display: none; }
+.evidence-sub { margin: 56px 0 0; font-size: var(--fs-h3); font-weight: 500; line-height: 1.2; letter-spacing: -.03em; }
+.device-block h4 { margin: 28px 0 0; font-size: var(--fs-h4); font-weight: 600; letter-spacing: -.02em; }
+.device-block .gallery { margin-top: 14px; }
+@media (max-width: 700px) { .gallery-per-3 .gal-slide { flex-basis: 72%; } .gal-slide { padding: 14px; } }
+@media (prefers-reduced-motion: no-preference) { .gallery-track { scroll-behavior: smooth; } }
