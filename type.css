@@ -205,9 +205,9 @@ html.js .trust .ribbon:hover .ribbon-inner, html.js .trust .ribbon.is-paused .ri
 .hl { font-weight: 700; color: #0e78a7; }
 
 /* ---------- Case study body ----------
-   Same size, weight and colour as the At a glance cells (18px, regular, #4e5362: 7.5:1 on #fafafa), so the deep dive does not look bigger than the summary.
+   Same as the body text on About, Resume and Privacy: 18px (--fs-body), regular, --muted (6.5:1 on #fafafa). The 21px lead size is kept for intros only.
    Short paragraphs and lists only add spacing. */
-.study-section > p, .study-section > ul { font-size: var(--fs-body); line-height: 1.65; max-width: 66ch; color: #4e5362; margin: 0 0 1em; }
+.study-section > p, .study-section > ul { font-size: var(--fs-body); line-height: 1.65; max-width: 66ch; color: var(--muted); margin: 0 0 1em; }
 .study-section > p:last-child, .study-section > ul:last-child { margin-bottom: 0; }
 .study-section > ul { padding-left: 1.3em; }
 .study-section > ul li { margin-bottom: .45em; padding-left: .2em; }
