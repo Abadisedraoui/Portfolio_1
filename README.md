@@ -31,7 +31,7 @@ Each card in `articles.html` has a `.article-thumbnail` slot. Add an `<img>` ins
 - `contact.js`: "Let's chat" opens a native `<dialog>` form that posts to Formspree. Without JavaScript the link falls back to `mailto:`.
 - `privacy.html`: explains both services. Update it if either one changes.
 - `accessibility.html`: the accessibility statement. It says what is in place, what was checked and what was not. Update "Last reviewed" and the lists whenever the site or the testing changes.
-- `article-thumbs.css` and the SVGs inside `articles.html`: thumbnails for the six articles, drawn with the colours and motifs of the LinkedIn banner (blue wash, mint line, leaves, icon bubbles). Cards 2, 4 and 6 move once, in under 5 seconds, using the same `.thumb` states as the project thumbnails (`thumbs.js`); cards 1, 3 and 5 are still. They are decorative (`aria-hidden`); the card title carries the meaning.
+- `article-thumbs.css` and the SVGs inside `articles.html`: thumbnails for the six articles, drawn with the colours and motifs of the LinkedIn banner (blue wash, mint line, leaves, icon bubbles). Cards 2, 4 and 6 loop every 6 seconds using the same `.thumb` states as the project thumbnails (`thumbs.js`); cards 1, 3 and 5 are still. `article-motion.js` adds the Pause button (WCAG 2.2.2) and pauses loops that are off screen. They are decorative (`aria-hidden`); the card title carries the meaning.
 - The Contentsquare tag ID (`a67c74590d182`) is set in `consent.js`. There is no domain to register in Contentsquare; the tag only needs to be on the page. Do not run the Contentsquare install wizard here, because it adds the script without the consent check.
 - `extras.css`: styles for the banner, the dialog and the privacy page.
 
