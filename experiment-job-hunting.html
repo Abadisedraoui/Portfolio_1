@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#fafafa"><link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=20261103a"><link rel="stylesheet" href="glass.css?v=20261103a"><link rel="stylesheet" href="extras.css?v=20261028d"><link rel="stylesheet" href="type.css?v=20261112a"><link rel="stylesheet" href="experiments-job-hunting.css?v=14">
+<link rel="stylesheet" href="style.css?v=20261103a"><link rel="stylesheet" href="glass.css?v=20261103a"><link rel="stylesheet" href="extras.css?v=20261028d"><link rel="stylesheet" href="type.css?v=20261112a"><link rel="stylesheet" href="experiments-job-hunting.css?v=15">
 </head><body><div class="brand-atmosphere" aria-hidden="true"></div><a class="skip-link" href="#main">Skip to content</a>
 <header class="topbar"><nav class="dock-links" aria-label="Primary navigation"><a href="index.html">Projects</a><a href="articles.html">Articles</a><a href="about.html">About</a><a href="experiments.html" class="is-current" aria-current="page">Experiments</a><a href="resume.html">Resume</a></nav></header>
 <main id="main">
@@ -44,7 +44,7 @@
 </section>
 <section class="study-section jh-text-section" id="claude">
 <p class="eyebrow">02 / First experiment</p><h2>Claude: promising, but I was still supervising everything</h2>
-<div class="jh-copy"><p>The idea for an automatic search came from a LinkedIn post I saw, by someone whose name I no longer remember. I used it as inspiration and a starting point, especially its idea of a scoring system.</p>
+<div class="jh-copy"><p>The idea for an automatic search came from a <a href="https://www.linkedin.com/posts/scotty-peterson_job-hunting-is-a-funnel-problem-so-i-automated-activity-7480274973845192705-EHM_" target="_blank" rel="noopener noreferrer">LinkedIn post by Scotty Peterson <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>. He built a job-hunting system with Claude Code, with a company watchlist, a scoring rubric and a daily digest. I used it as inspiration and a starting point, especially its idea of a scoring system.</p>
 <p>I did not go looking for ready-made systems after that. I wanted to learn by building my own.</p>
 <p>I began by asking Claude to run a daily search. I gave it my CV, my preferred roles and my company list.</p>
 <p>It found interesting opportunities, but the workflow was fragile:</p>
@@ -86,7 +86,7 @@ jobs:
 <p>I wrote down what the system should do:</p>
 <ul class="jh-list"><li>Monitor my company list.</li><li>Search beyond LinkedIn.</li><li>Find different UX/UI and Product Design job titles.</li><li>Avoid showing the same offer twice.</li><li>Compare each role with my experience.</li><li>Keep a record of what has already been checked.</li><li>Produce a report I can review quickly.</li></ul>
 <p>The most important addition was a <strong>coverage report with one outcome per company</strong>. If a page is blocked or unreadable, that must be visible. It must not quietly become “no jobs found”.</p>
-<p>I also wrote scoring rules to prioritise offers. The idea of scoring came from that LinkedIn post I mentioned earlier. A high score means the role matches my profile. It does not predict whether a company will hire me.</p></div>
+<p>I also wrote scoring rules to prioritise offers. The idea of scoring came from Scotty Peterson's post, mentioned above. A high score means the role matches my profile. It does not predict whether a company will hire me.</p></div>
 <div class="jh-rulebox"><p class="jh-rulelabel">A rule I kept coming back to</p><p>Never skip a company silently.</p><span>Possible outcomes: Checked / No relevant roles / Unresolved / Error</span></div><figure class="jh-shot"><a href="assets/jh-master-prompt.webp" target="_blank" rel="noopener noreferrer" aria-label="Open full-size image: The master prompt in the GitHub repository, with the rule to review all companies and never skip one silently (opens in a new tab)"><img src="assets/jh-master-prompt.webp" width="1400" height="656" loading="lazy" alt="The master prompt in the GitHub repository, with the rule to review all companies and never skip one silently"></a><figcaption>The master prompt in the repository. The main rule is to review every company and never skip one silently.</figcaption></figure><figure class="jh-shot"><a href="assets/jh-scoring-offer.webp" target="_blank" rel="noopener noreferrer" aria-label="Open full-size image: One scored job offer from the 7 October review, with points for each rule and a note on what does not fit (opens in a new tab)"><img src="assets/jh-scoring-offer.webp" width="935" height="687" loading="lazy" alt="One scored job offer from the 7 October review, with points for each rule and a note on what does not fit"></a><figcaption>One scored offer from the 7 October review. Each rule adds points, and a “But” note says what does not fit my profile.</figcaption></figure>
 </section>
 <section class="study-section jh-text-section" id="python">
