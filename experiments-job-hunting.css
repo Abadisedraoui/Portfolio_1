@@ -77,3 +77,9 @@
 @media(max-width:760px){.jh-status-cols{grid-template-columns:1fr}}
 .jh-copy a{color:var(--ink);text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}.jh-copy a:hover{color:var(--brand)}
 .jh-study-layout .jh-study-toc ol{padding-left:2.1em}
+
+/* Audit legend: number and label no longer overlap (the dot is hidden, so the grid needs no 12px column) */
+.jh-audit-legend p{grid-template-columns:auto 1fr;column-gap:12px;align-items:center}
+.jh-audit-legend p strong{grid-row:span 2;min-width:2.2ch}
+.jh-audit-legend p small{grid-column:2}
+.jh-after-shot{margin-top:32px}.jh-after-shot p{margin:0 0 .6em}
