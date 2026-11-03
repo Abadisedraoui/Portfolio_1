@@ -75,3 +75,5 @@
 .jh-status-cols>div:last-child h3::before{content:"↻ ";color:#6a4fc4}
 .jh-status-cols .jh-list{margin:0}.jh-status-cols .jh-list li{font-size:var(--fs-small);line-height:1.6;color:#2b303b;margin:0 0 .5em}
 @media(max-width:760px){.jh-status-cols{grid-template-columns:1fr}}
+.jh-copy a{color:var(--ink);text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}.jh-copy a:hover{color:var(--brand)}
+.jh-study-layout .jh-study-toc ol{padding-left:2.1em}
