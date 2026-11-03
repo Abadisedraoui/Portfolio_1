@@ -7,8 +7,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css?v=20261102b"><link rel="stylesheet" href="glass.css?v=20261031c">
 <link rel="stylesheet" href="extras.css?v=20261028d">
-<link rel="stylesheet" href="articles.css?v=20261022-blue-motion">
-<link rel="stylesheet" href="type.css?v=20261112a"><link rel="stylesheet" href="experiments-job-hunting.css?v=3">
+<link rel="stylesheet" href="thumbs.css?v=20261030a"><link rel="stylesheet" href="article-thumbs.css?v=20261106a"><link rel="stylesheet" href="articles.css?v=20261022-blue-motion">
+<link rel="stylesheet" href="type.css?v=20261112a"><link rel="stylesheet" href="experiments-job-hunting.css?v=5">
 </head><body><div class="brand-atmosphere" aria-hidden="true"></div><a class="skip-link" href="#main">Skip to content</a>
 <header class="topbar"><nav class="dock-links" aria-label="Primary navigation"><a href="index.html">Projects</a><a href="articles.html">Articles</a><a href="about.html">About</a><a href="experiments.html" class="is-current" aria-current="page">Experiments</a><a href="resume.html">Resume</a></nav></header>
 <a class="cv-bubble" href="assets/Zainab-Abadi-CV.pdf" download="Zainab-Abadi-CV.pdf" aria-label="Download CV (PDF)" title="Download CV (PDF)"><span>CV</span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M5 16v4h14v-4"/></svg></a>
@@ -19,18 +19,23 @@
   <div class="hero-actions"><a class="button" href="index.html#work">My latest work</a><a class="button button-secondary" href="mailto:zainab.abadi.s@gmail.com" data-contact>Let's chat</a></div>
 </section>
 <section class="container experiment-index" aria-labelledby="page-title">
-  <div class="experiment-intro"><p class="eyebrow">Experiments</p><h2 id="page-title">Things I'm testing.</h2><p>Some ideas begin with a design question. This one began with a spreadsheet and too many job tabs.</p></div>
+  <div class="experiment-intro"><p class="eyebrow">Experiments</p><h2 id="page-title">A playground for testing ideas.</h2><p>Small experiments in design, code, motion and interaction. I share them while they are still being built, so each card says what works and what is still in progress.</p></div>
+  <div class="experiment-status" aria-label="Status of the current experiment">
+    <div><h3>What works</h3><ul class="jh-list"><li>Checks company career pages and ATS feeds</li><li>Removes duplicate offers</li><li>Creates CSV reports and a dashboard</li></ul></div>
+    <div><h3>In progress</h3><ul class="jh-list"><li>Full coverage of the 306-company watchlist</li><li>A daily schedule that does not use up GitHub Actions</li><li>Scoring and deduplication against every tracker</li></ul></div>
+  </div>
   <div class="articles-grid">
-    <a class="article-card" href="experiment-job-hunting.html" aria-label="Read Job Hunting case study">
-      <div class="article-thumbnail experiment-article-thumbnail" style="--thumbnail-ratio:4 / 3">
-        <div class="jh-thumb" aria-hidden="true">
-        <div class="jh-thumb-browser"><span class="jh-thumb-dots"><i></i><i></i><i></i></span><span>job watch / search.py</span><b>⌁</b></div>
-        <div class="jh-thumb-heading">Job hunting<span class="jh-thumb-cursor">_</span></div>
-        <div class="jh-thumb-dashboard"><div class="jh-thumb-row"><span class="jh-thumb-tag">WATCHLIST</span><strong>306</strong><span>companies</span></div><div class="jh-thumb-row"><span class="jh-thumb-tag">STATUS</span><strong class="jh-thumb-live">iterating</strong><span>in public</span></div></div>
-        <div class="jh-thumb-code"><span><i class="jh-code-ok">✓</i> check ATS</span><span><i class="jh-code-ok">✓</i> deduplicate</span><span><i class="jh-code-pending">↻</i> validate coverage</span></div>
-      </div>
-      </div>
-      <div class="article-caption"><p class="article-kind">Job Hunting</p><h3>Automating the search with AI &amp; Python</h3></div>
+    <a class="article-card" href="experiment-job-hunting.html" aria-label="Read the Automating Job Hunting case study">
+      <div class="article-thumbnail" style="--thumbnail-ratio:4 / 3"><div class="thumb" aria-hidden="true"><svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><defs><linearGradient id="jg" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="800" y2="600"><stop offset="0" stop-color="#f1e6ff"/><stop offset=".5" stop-color="#d9ecff"/><stop offset="1" stop-color="#ddfbec"/></linearGradient><filter id="jb" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="46"/></filter><filter id="jp" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" seed="7"/><feColorMatrix values="0 0 0 0 0 0 0 0 0 0.1 0 0 0 0 0.3 0 0 0 0.55 -.2"/></filter><filter id="js" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#2a1d6e" flood-opacity=".22"/></filter><clipPath id="jl"><circle cx="330" cy="285" r="150"/></clipPath></defs>
+<rect width="800" height="600" fill="url(#jg)"/><circle cx="90" cy="520" r="250" fill="#ffb8d6" opacity=".45" filter="url(#jb)"/><circle cx="730" cy="50" r="250" fill="#9fd8ff" opacity=".55" filter="url(#jb)"/><circle cx="470" cy="590" r="200" fill="#b9f0cf" opacity=".55" filter="url(#jb)"/><rect width="800" height="600" filter="url(#jp)" opacity=".5"/>
+<g filter="url(#js)"><rect x="430" y="70" width="270" height="130" rx="22" fill="#fff" opacity=".78"/><circle cx="478" cy="118" r="22" fill="#c9b8f6"/><rect x="516" y="104" width="130" height="12" rx="6" fill="#b3bdd6"/><rect x="516" y="126" width="90" height="10" rx="5" fill="#d3d9e8"/><rect x="458" y="158" width="210" height="10" rx="5" fill="#d3d9e8"/></g>
+<g filter="url(#js)" transform="translate(60 0)"><rect x="470" y="430" width="250" height="92" rx="22" fill="#fff" opacity=".82"/><rect x="496" y="456" width="44" height="44" rx="12" fill="#bdeed6"/><path d="M507 479l9 9 16-18" fill="none" stroke="#196e50" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><rect x="556" y="462" width="130" height="12" rx="6" fill="#b3bdd6"/><rect x="556" y="484" width="90" height="10" rx="5" fill="#d3d9e8"/></g>
+<g filter="url(#js)"><circle cx="330" cy="285" r="150" fill="#fff" opacity=".55"/></g>
+<g clip-path="url(#jl)"><g filter="url(#js)" transform="rotate(-6 330 285)"><rect x="235" y="170" width="190" height="240" rx="18" fill="#fff"/><rect x="262" y="200" width="60" height="60" rx="14" fill="#c9b8f6"/><rect x="338" y="206" width="68" height="12" rx="6" fill="#8e9ac0"/><rect x="338" y="230" width="48" height="10" rx="5" fill="#c4cce0"/><rect x="262" y="284" width="136" height="10" rx="5" fill="#c4cce0"/><rect x="262" y="308" width="120" height="10" rx="5" fill="#c4cce0"/><rect x="262" y="332" width="136" height="10" rx="5" fill="#c4cce0"/><rect x="262" y="364" width="74" height="26" rx="13" fill="#5b4bd0"/></g></g>
+<circle cx="330" cy="285" r="150" fill="none" stroke="#3b3f86" stroke-width="16"/><circle cx="330" cy="285" r="142" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="3"/>
+<path d="M436 395l78 98" stroke="#3b3f86" stroke-width="30" stroke-linecap="round"/><path d="M440 400l72 90" stroke="#6f6fd0" stroke-width="10" stroke-linecap="round" opacity=".6"/>
+<g fill="#fff"><path d="M120 120l6 18 18 6-18 6-6 18-6-18-18-6 18-6z" opacity=".9"/><path d="M700 330l5 14 14 5-14 5-5 14-5-14-14-5 14-5z" opacity=".9"/><path d="M590 250l4 11 11 4-11 4-4 11-4-11-11-4 11-4z" opacity=".8"/></g></svg></div></div>
+      <div class="article-caption"><p class="article-kind">Experiment · In progress</p><h3>Automating Job Hunting</h3></div>
     </a>
   </div>
 </section>

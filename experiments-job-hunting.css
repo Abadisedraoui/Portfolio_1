@@ -21,3 +21,53 @@
 .jh-study-layout .jh-code-figure,.jh-study-layout .jh-audit,.jh-study-layout .jh-real-dashboard{max-width:100%}
 @media(max-width:760px){.jh-study-layout .jh-study-toc{max-height:none;overflow:visible}.jh-study-layout .jh-study-toc ol{columns:2}.jh-study-layout .jh-text-section>h2{font-size:1.875rem}}
 @media(max-width:430px){.jh-study-layout .jh-study-toc ol{columns:1}}
+
+/* Readability pass (dyslexia-friendly): looser letter spacing, shorter lines, darker body text, no tiny type, no all-caps. */
+.jh-hero h1{letter-spacing:-.035em}
+.jh-lede,.jh-text-section>h2,.jh-study-layout .jh-text-section>h2,.jh-rulebox p:nth-child(2),.jh-ui-display{letter-spacing:-.015em}
+.jh-big-number{letter-spacing:-.04em}
+.jh-search-visual b,.jh-dashboard-head div strong,.jh-dashboard-stats b,.jh-audit-legend p strong{letter-spacing:-.01em}
+.jh-leadcopy{max-width:62ch;color:#3a3f4b}
+.jh-study-layout .jh-copy{max-width:64ch}
+.jh-copy p,.jh-copy li{font-size:var(--fs-body);line-height:1.8;letter-spacing:.012em;word-spacing:.06em;color:#2b303b;text-align:left;hyphens:manual}
+.jh-copy p{margin:0 0 1.3em}
+.jh-copy strong{color:#07131c}
+.jh-key{padding-left:18px;border-left:4px solid var(--brand)}
+.jh-list{margin:0 0 1.5em;padding-left:1.4em}
+.jh-list li{margin:0 0 .55em;padding-left:.3em}
+.jh-list li::marker{color:var(--brand)}
+.jh-caveat .jh-list{margin-top:12px}.jh-caveat .jh-list li,.jh-caveat p{font-size:var(--fs-small);line-height:1.7;color:#3a3f4b}
+.jh-study-layout .jh-text-section>.eyebrow{font-size:var(--fs-caption);letter-spacing:.02em}
+.jh-study-layout .jh-text-section>h2{max-width:24ch}
+/* minimum 14px in every label */
+.jh-board-top,.jh-ui-kicker,.jh-small-label,.jh-ui-sub,.jh-figure-label,.jh-search-visual span,.jh-rulelabel,.jh-flow>div>span,.jh-audit-head,.jh-dashboard-head span,.jh-dashboard-head small,.jh-dashboard-stats span,.jh-dashboard-table>span{font-size:.875rem;letter-spacing:.01em}
+.jh-dashboard-table>strong,.jh-files code{font-size:.9375rem}
+.jh-code-figure pre,.jh-code-figure blockquote{font-size:.9375rem;line-height:1.9}
+.jh-code-figure figcaption,.jh-audit figcaption,.jh-real-dashboard figcaption{font-size:.9375rem;color:#3a3f4b}
+.jh-files>div{padding:18px 6px}
+@media(max-width:760px){.jh-copy p,.jh-copy li{line-height:1.75}.jh-study-layout .jh-text-section>h2{max-width:none}}
+
+/* Experiments index: intro, status and a thumbnail that fits its 4:3 frame. */
+.experiment-intro>p:last-child{max-width:60ch;font-size:var(--fs-body);line-height:1.7;color:#3a3f4b}
+.experiment-intro h2{letter-spacing:-.015em}
+.experiment-status{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;max-width:860px;margin:0 0 44px}
+.experiment-status>div{padding:22px 26px;border:1px solid var(--line);border-radius:20px;background:#ffffffb8}
+.experiment-status h3{font-size:var(--fs-h4);font-weight:600;letter-spacing:-.01em;margin:0 0 12px}
+.experiment-status>div:first-child h3::before{content:"✓ ";color:#196e50}
+.experiment-status>div:last-child h3::before{content:"↻ ";color:#6a4fc4}
+.experiment-status .jh-list{margin:0}.experiment-status .jh-list li{font-size:var(--fs-small);line-height:1.6;color:#2b303b;margin:0 0 .5em}
+.experiment-article-thumbnail .jh-thumb{padding:6%;gap:7px}
+.experiment-article-thumbnail .jh-thumb-browser{padding:7px 9px;font-size:clamp(10px,3.4cqw,13px)}
+.experiment-article-thumbnail .jh-thumb-heading{font-size:clamp(22px,9cqw,38px);letter-spacing:-.03em}
+.experiment-article-thumbnail .jh-thumb-row{padding:8px 10px}
+.experiment-article-thumbnail .jh-thumb-row strong{font-size:clamp(17px,6.5cqw,28px);letter-spacing:-.02em}
+.experiment-article-thumbnail .jh-thumb-row span:last-child{font-size:clamp(10px,3.2cqw,13px)}
+.experiment-article-thumbnail .jh-thumb-code{margin:auto 0 0;padding:8px 10px;gap:2px 10px;font-size:clamp(10px,3.2cqw,13px)}
+@media(max-width:760px){.experiment-status{grid-template-columns:1fr}}
+
+/* Case study status block */
+.jh-status{max-width:920px;margin:36px 0 0;padding:24px 28px;border:1px solid #f3dfc2;border-radius:20px;background:#fff5e9}
+.jh-status-head{display:flex;flex-wrap:wrap;gap:12px 48px;margin:0 0 20px}.jh-status-head div{display:flex;flex-direction:column;gap:4px}
+.jh-status-head span{font-size:.875rem;color:#565b68}.jh-status-head strong{font-size:var(--fs-h4);font-weight:600;letter-spacing:-.01em}
+.jh-status .jh-status-cols{max-width:none;margin:0 0 4px;gap:16px}.jh-status .jh-status-cols>div{background:#fff}
+.jh-status>p{font-size:var(--fs-small);line-height:1.7;color:#3a3f4b;margin:16px 0 0}

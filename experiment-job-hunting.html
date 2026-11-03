@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#fafafa"><link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=20261102b"><link rel="stylesheet" href="glass.css?v=20261031c"><link rel="stylesheet" href="extras.css?v=20261028d"><link rel="stylesheet" href="type.css?v=20261112a"><link rel="stylesheet" href="experiments-job-hunting.css?v=3">
+<link rel="stylesheet" href="style.css?v=20261102b"><link rel="stylesheet" href="glass.css?v=20261031c"><link rel="stylesheet" href="extras.css?v=20261028d"><link rel="stylesheet" href="type.css?v=20261112a"><link rel="stylesheet" href="experiments-job-hunting.css?v=6">
 </head><body><div class="brand-atmosphere" aria-hidden="true"></div><a class="skip-link" href="#main">Skip to content</a>
 <header class="topbar"><nav class="dock-links" aria-label="Primary navigation"><a href="index.html">Projects</a><a href="articles.html">Articles</a><a href="about.html">About</a><a href="experiments.html" class="is-current" aria-current="page">Experiments</a><a href="resume.html">Resume</a></nav></header>
 <main id="main">
@@ -16,44 +16,56 @@
 <p class="eyebrow">Experiment / AI + code / 2026 · Ongoing</p>
 <h1>Job Hunting<span class="jh-hero-dot">.</span></h1>
 <p class="jh-lede">Automating the search, not the decisions.</p>
-<p class="jh-leadcopy">What happens when I treat my own job hunt as a product problem? A lot of testing, some broken automations, a growing Python project, and a much better understanding of what “automated” should actually mean.</p>
+<p class="jh-leadcopy">What happens when I treat my own job hunt as a product problem? Lots of testing, some broken automations, a growing Python project, and a clearer idea of what “automated” should mean.</p>
 <div class="jh-pills" aria-label="Project technologies"><span>Python</span><span>Claude + ChatGPT</span><span>GitHub Actions</span><span>APIs &amp; Playwright</span><span>UX / systems thinking</span></div>
 </header>
 <section class="container jh-wide-figure" aria-label="Overview of the automation">
 <figure class="jh-artboard">
   <div class="jh-board-top"><span class="jh-board-dots" aria-hidden="true">● ● ●</span><span>job-watch / process overview</span><span>personal experiment</span></div>
   <div class="jh-board-grid">
-    <div class="jh-board-main"><p class="jh-ui-kicker">JOB SEARCH / V3</p><p class="jh-ui-display">Less scrolling.<br>More checking.</p><div class="jh-ui-command"><span>$</span> python check_all_companies.py --browser <span class="jh-blink" aria-hidden="true">▌</span></div></div>
-    <div class="jh-board-side"><div class="jh-small-label">WATCHLIST INPUT</div><div class="jh-big-number">306<span> companies</span></div><div class="jh-chart" aria-hidden="true"><span style="--h:37%"></span><span style="--h:58%"></span><span style="--h:76%"></span><span style="--h:43%"></span><span style="--h:66%"></span><span style="--h:92%"></span><span style="--h:55%"></span></div><p class="jh-ui-sub">Schematic graphic · not a live search result</p></div>
+    <div class="jh-board-main"><p class="jh-ui-kicker">Job search / v3</p><p class="jh-ui-display">Less scrolling.<br>More checking.</p><div class="jh-ui-command"><span>$</span> python check_all_companies.py --browser <span class="jh-blink" aria-hidden="true">▌</span></div></div>
+    <div class="jh-board-side"><div class="jh-small-label">Watchlist input</div><div class="jh-big-number">306<span> companies</span></div><div class="jh-chart" aria-hidden="true"><span style="--h:37%"></span><span style="--h:58%"></span><span style="--h:76%"></span><span style="--h:43%"></span><span style="--h:66%"></span><span style="--h:92%"></span><span style="--h:55%"></span></div><p class="jh-ui-sub">Schematic graphic · not a live search result</p></div>
   </div>
 </figure><p class="jh-caption">A visual overview of the current experiment. This is an interface illustration, not a claim that all 306 companies were successfully checked in one run.</p>
 </section>
 <section class="container quick-scan-wrap jh-quick-scan" aria-labelledby="quick-title"><div class="quick-scan-head"><div><p class="eyebrow">Quick scan</p><h2 id="quick-title">At a glance</h2></div><a href="#case-study" class="jump-link">Read the full story ↓</a></div><div class="quick-summary">
-<div class="quick-cell"><h3>Context &amp; challenge</h3><p>Repeated searches, duplicates and no reliable way to know which companies were actually checked.</p></div>
+<div class="quick-cell"><h3>Context &amp; challenge</h3><p>Repeated searches, duplicates, and no reliable way to know which companies had really been checked.</p></div>
 <div class="quick-cell"><h3>My role</h3><p>Product thinking, requirements, Python, AI-assisted development, testing and iteration.</p></div>
-<div class="quick-cell"><h3>Approach &amp; evidence</h3><p>Experimenting with Claude and LinkedIn, then GitHub Actions, ATS APIs, Python and audits.</p></div>
-<div class="quick-cell"><h3>Outcome &amp; deliverables</h3><p>A Python system with a 306-company watchlist, deduplication, CSV reports and a dashboard. Still being validated.</p></div>
-<div class="quick-cell impact-cell"><h3>What changed</h3><p>An audit found 170 companies silently excluded by the old checker. The newer version records coverage and unresolved sources explicitly.</p></div>
-</div></section><div id="case-study" class="container study-layout jh-study-layout"><aside class="study-toc jh-study-toc"><div class="eyebrow">Deep dive · Building in public</div><h2>In this case study</h2><nav aria-label="Case study contents"><ol><li><a href="#context">Context</a></li><li><a href="#claude">Claude</a></li><li><a href="#linkedin">LinkedIn</a></li><li><a href="#github">GitHub &amp; Actions</a></li><li><a href="#requirements">Requirements</a></li><li><a href="#art">Art opportunities</a></li><li><a href="#python">Python + ChatGPT</a></li><li><a href="#audit">The audit</a></li><li><a href="#dashboard">Dashboard</a></li><li><a href="#technical">Technical notes</a></li><li><a href="#outcome">Still building</a></li></ol></nav><a class="jump-link" href="#quick-title">↑ Back to overview</a></aside><div class="study-body jh-study-body"><section class="study-section jh-text-section" id="context">
-  <p class="eyebrow">00 / Context</p><h2>It started with an Excel spreadsheet. Obviously.</h2>
-  <div class="jh-copy"><p>When I began looking for a job, I did what I usually do with a lot of information: I made a spreadsheet. Companies, applications, salaries, notes, links. It helped me keep track of things, but it didn't solve all the work happening before I could even decide whether to apply.</p>
-  <p>I was visiting the same job boards, finding the same openings, and checking companies I was interested in. I wanted a way to monitor the market without spending my mornings doing the same searches again.</p><p><strong>My goal wasn't to automate applying for jobs.</strong> I still wanted to read the offers and decide. I wanted to automate the repetitive searching, checking and organising around that decision.</p></div>
+<div class="quick-cell"><h3>Approach &amp; evidence</h3><p>Tests with Claude and LinkedIn, then GitHub Actions, ATS APIs, Python and an audit.</p></div>
+<div class="quick-cell"><h3>Outcome &amp; deliverables</h3><p>A Python system with a 306-company watchlist, deduplication, CSV reports and a dashboard. Still in validation.</p></div>
+<div class="quick-cell impact-cell"><h3>What changed</h3><p>An audit found that the old checker silently skipped 170 companies. The new version records coverage and unresolved sources.</p></div>
+</div></section><div id="case-study" class="container study-layout jh-study-layout"><aside class="study-toc jh-study-toc"><div class="eyebrow">Deep dive · Building in public</div><h2>In this case study</h2><nav aria-label="Case study contents"><ol><li><a href="#context">Context</a></li><li><a href="#claude">Claude</a></li><li><a href="#linkedin">LinkedIn</a></li><li><a href="#github">GitHub &amp; Actions</a></li><li><a href="#requirements">Requirements</a></li><li><a href="#python">Python + ChatGPT</a></li><li><a href="#audit">The audit</a></li><li><a href="#dashboard">Dashboard</a></li><li><a href="#art">Art opportunities</a></li><li><a href="#technical">Technical notes</a></li><li><a href="#outcome">Still building</a></li></ol></nav><a class="jump-link" href="#quick-title">↑ Back to overview</a></aside><div class="study-body jh-study-body"><section class="study-section jh-text-section" id="context">
+  <p class="eyebrow">01 / Context</p><h2>It started with an Excel spreadsheet</h2>
+  <div class="jh-copy"><p>When I started looking for a job, I did what I always do with a lot of information: I made a spreadsheet. Companies, applications, salaries, notes, links.</p>
+  <p>It helped me keep track. But it did nothing for the work that comes before applying: visiting the same job boards, finding the same openings and checking the same companies.</p>
+  <p>I wanted to monitor the market without spending every morning on the same searches.</p>
+  <p class="jh-key"><strong>My goal was not to automate applying.</strong> I still want to read the offers and decide. I wanted to automate the repetitive searching, checking and organising around that decision.</p></div>
 </section>
 <section class="study-section jh-text-section" id="claude">
-<p class="eyebrow">01 / First experiments</p><h2>Claude: promising, but I was still supervising everything.</h2>
-<div class="jh-copy"><p>I started by asking Claude to run a recurring search using my CV, preferred roles and company list. It could find interesting opportunities, but the workflow was fragile. I kept running into token limits, permission requests and interrupted sessions. On other occasions, I got a result without knowing exactly which sources had been checked.</p><p>That was the first useful failure: <strong>a digest is not the same thing as a completed search</strong>. I needed evidence that the work had actually happened, not only a confident-looking summary.</p></div>
-<figure class="jh-code-figure"><div class="jh-figure-label"><span>From my Claude workflow · excerpt</span><span>Interrupted run</span></div><blockquote>“Step 0: check if today's digest already ran.”<br>“Last commit is ‘digest 07-10-2026’ … Proceeding with the full daily review.”<br>“Running check_boards.py.”</blockquote><figcaption>Part of an early automation log. Subsequent checks revealed unfinished runs, uncommitted results and outdated digests.</figcaption></figure>
+<p class="eyebrow">02 / First experiment</p><h2>Claude: promising, but I was still supervising everything</h2>
+<div class="jh-copy"><p>I began by asking Claude to run a daily search. I gave it my CV, my preferred roles and my company list.</p>
+<p>It found interesting opportunities, but the workflow was fragile:</p>
+<ul class="jh-list"><li>I kept hitting token limits.</li><li>I had to approve permission requests.</li><li>Sessions were interrupted.</li><li>Sometimes I got a result without knowing which sources had been checked.</li></ul>
+<p>That last point bothered me most. I was supposed to be saving time, not supervising a search assistant every morning.</p>
+<p class="jh-key">It was my first useful failure: <strong>a digest is not the same as a completed search.</strong> I needed evidence that the work had happened, not just a confident summary.</p></div>
+<figure class="jh-code-figure"><div class="jh-figure-label"><span>From my Claude workflow · excerpt</span><span>Interrupted run</span></div><blockquote>“Step 0: check if today's digest already ran.”<br>“Last commit is ‘digest 07-10-2026’ … Proceeding with the full daily review.”<br>“Running check_boards.py.”</blockquote><figcaption>Part of an early automation log. Later checks showed unfinished runs, uncommitted results and outdated digests.</figcaption></figure>
 </section>
 <section class="study-section jh-text-section" id="linkedin">
-<p class="eyebrow">02 / Search iteration</p><h2>LinkedIn wasn't enough either.</h2>
-<div class="jh-copy"><p>I experimented with LinkedIn job searches, alerts, titles and location filters. I kept adjusting them because companies use different names for similar design roles, and the same vacancies could appear repeatedly. It also felt limiting to rely on a single platform.</p><p>Instead of trying to find the perfect search query by intuition, I kept comparing what I got with what I needed. The next question became: could I check the actual company career pages and ATS feeds, and keep LinkedIn as just one discovery source?</p></div>
-<div class="jh-search-visual" role="img" aria-label="Illustration of overlapping job searches across LinkedIn, company career pages and ATS feeds"><div><span>SEARCH SOURCE / 01</span><b>LinkedIn</b><small>discover</small></div><div><span>SEARCH SOURCE / 02</span><b>Careers pages</b><small>verify</small></div><div><span>SEARCH SOURCE / 03</span><b>ATS APIs</b><small>retrieve</small></div></div>
+<p class="eyebrow">03 / Search iteration</p><h2>LinkedIn was not enough either</h2>
+<div class="jh-copy"><p>Next I tried LinkedIn searches and alerts. I tested keywords, job titles and location filters. I kept adjusting them for three reasons:</p>
+<ul class="jh-list"><li>Companies use different names for similar design roles.</li><li>The same vacancies kept appearing.</li><li>Relying on one platform limited my search.</li></ul>
+<p>I stopped trying to guess the perfect search. Instead, I compared the results with what I actually needed.</p>
+<p>That led to a new question: could I check company career pages and ATS feeds directly? LinkedIn would become one place to discover roles, not the only one.</p></div>
+<div class="jh-search-visual" role="img" aria-label="Illustration of overlapping job searches across LinkedIn, company career pages and ATS feeds"><div><span>Search source 1</span><b>LinkedIn</b><small>discover</small></div><div><span>Search source 2</span><b>Careers pages</b><small>verify</small></div><div><span>Search source 3</span><b>ATS APIs</b><small>retrieve</small></div></div>
 </section>
 <section class="study-section jh-text-section" id="github">
-<p class="eyebrow">03 / GitHub-only phase</p><h2>Then I moved the workflow to GitHub.</h2>
-<div class="jh-copy"><p>I wanted the search to run without needing an ongoing conversation with Claude, so I moved the process into a GitHub repository. I started working with scripts, a company watchlist, CSV histories, written rules and a scheduled workflow through GitHub Actions.</p>
-<p>That gave the process a clearer structure: source files and instructions could live together, the output could be committed, and I could inspect what had changed from one run to the next.</p><p>Then I ran out of GitHub Actions minutes.</p>
-<p>At that point the scheduled job search was paused to avoid further charges. It was annoying, but also forced me to understand the cost of repeated runs, browser-based scraping and long-running workflows. A task scheduled every day isn't necessarily a sustainable automation.</p></div>
+<p class="eyebrow">04 / GitHub-only phase</p><h2>I moved the workflow to GitHub, then ran out of minutes</h2>
+<div class="jh-copy"><p>I wanted the search to run without a live conversation with Claude. So I moved the process into a GitHub repository.</p>
+<p>It held scripts, a company watchlist, CSV histories, written rules and a scheduled workflow in GitHub Actions.</p>
+<p>This gave the process a clearer structure. Instructions and source files lived together. Output could be committed. I could see what changed between runs.</p>
+<p>Then I ran out of GitHub Actions minutes.</p>
+<p>I paused the scheduled search to avoid extra charges. It was annoying, but it taught me what repeated runs, browser-based scraping and long workflows really cost.</p>
+<p class="jh-key"><strong>A task that runs every day is not automatically a sustainable automation.</strong></p></div>
 <figure class="jh-code-figure jh-code-figure-dark"><div class="jh-figure-label"><span>.github/workflows/daily-job-search.yml</span><span>Repository state</span></div><pre><code><span class="cmt"># PAUSED: GitHub-hosted Actions quota reached</span>
 <span class="cmt"># for this billing cycle.</span>
 
@@ -63,54 +75,75 @@ on:
 jobs:
   paused_notice:
     runs-on: ubuntu-latest
-    timeout-minutes: 2</code></pre><figcaption>Real excerpt from the paused workflow. The daily schedule was removed; the file keeps a manual trigger and a quota notice. This is not an active daily search.</figcaption></figure>
+    timeout-minutes: 2</code></pre><figcaption>Real excerpt from the paused workflow. I removed the daily schedule. The file keeps a manual trigger and a quota notice. This is not an active daily search.</figcaption></figure>
 </section>
 <section class="study-section jh-text-section" id="requirements">
-<p class="eyebrow">04 / What changed</p><h2>I started specifying what “working” actually meant.</h2>
-<div class="jh-copy"><p>I didn't start by choosing the ideal stack or modelling an entire system in advance. The requirements got sharper because I kept trying things and noticing what wasn't working.</p>
-<p>I wrote down what the system should do: monitor my company list, search beyond LinkedIn, find different UX/UI and Product Design titles, avoid duplicates, compare opportunities with my experience, and produce something I could actually review.</p>
-<p>The important addition was a <strong>coverage report with one outcome per company</strong>. If a page is blocked or unreadable, that needs to be visible. It shouldn't quietly turn into “no jobs found”.</p></div>
-<div class="jh-rulebox"><p class="jh-rulelabel">A rule I kept coming back to</p><p>Never skip a company silently.</p><span>Checked / No relevant roles / Unresolved / Error</span></div>
-</section>
-<section class="study-section jh-text-section" id="art">
-<p class="eyebrow">05 / Another use case</p><h2>And then I tried the same idea for art opportunities.</h2>
-<div class="jh-copy"><p>I have interests and training beyond digital product design, so I built a parallel workflow for creative opportunities: art teaching, commissions, freelance projects, exhibitions and open calls.</p><p>It uses a similar structure, but not the same filters. An art residency and a Product Designer role shouldn't be evaluated in the same way. Keeping the histories and rules separate helped me see which parts of the system were reusable and which weren't.</p></div>
-<div class="jh-taxonomy" aria-label="Categories for the art opportunities search"><span>Employment</span><span>Freelance projects</span><span>Events &amp; commissions</span><span>Open calls</span></div>
+<p class="eyebrow">05 / Requirements</p><h2>I defined what “working” means</h2>
+<div class="jh-copy"><p>I did not begin by choosing the ideal stack or modelling the whole system. I learned as I tested. The requirements got sharper each time something failed.</p>
+<p>I wrote down what the system should do:</p>
+<ul class="jh-list"><li>Monitor my company list.</li><li>Search beyond LinkedIn.</li><li>Find different UX/UI and Product Design job titles.</li><li>Avoid showing the same offer twice.</li><li>Compare each role with my experience.</li><li>Keep a record of what has already been checked.</li><li>Produce a report I can review quickly.</li></ul>
+<p>The most important addition was a <strong>coverage report with one outcome per company</strong>. If a page is blocked or unreadable, that must be visible. It must not quietly become “no jobs found”.</p>
+<p>I also wrote scoring rules to prioritise offers. A high score means the role matches my profile. It does not predict whether a company will hire me.</p></div>
+<div class="jh-rulebox"><p class="jh-rulelabel">A rule I kept coming back to</p><p>Never skip a company silently.</p><span>Possible outcomes: Checked / No relevant roles / Unresolved / Error</span></div>
 </section>
 <section class="study-section jh-text-section" id="python">
-<p class="eyebrow">06 / Python + ChatGPT</p><h2>Building a version I can inspect and run.</h2>
-<div class="jh-copy"><p>I then worked with ChatGPT to develop a more independent Python implementation. AI helped me move faster with code, troubleshoot and compare approaches, while I defined requirements, reviewed how the scripts worked and tested whether the outputs answered the real problem.</p>
-<p>I already work with code and understand programming logic; this project has been a way to deepen that practice, alongside my master's in Research Methodology, where I'm also studying Python. I was learning from each implementation and its limitations, rather than pretending to have chosen every technical decision correctly from day one.</p>
-<p>The system now supports public job data from multiple ATS platforms, HTML parsing and Playwright as a fallback for more dynamic pages. It records historical results, normalises URLs, checks duplicates and generates CSV and HTML reports.</p></div>
+<p class="eyebrow">06 / Python + ChatGPT</p><h2>I built a version I can inspect and run</h2>
+<div class="jh-copy"><p>Then I worked with ChatGPT to build a more independent Python version.</p>
+<p>AI helped me move faster. It helped me write code, troubleshoot and compare approaches. I defined the requirements, worked through the logic, reviewed the scripts and tested whether the output solved the real problem.</p>
+<p>I already work with code and understand programming logic. This project is a way to deepen that practice, alongside my master's in Research Methodology, where I am also studying Python. I learned from each implementation and from its limits. I did not pretend to choose every technical detail correctly from day one.</p>
+<p>The system now does the following:</p>
+<ul class="jh-list"><li>Reads public job data from ATS platforms such as Greenhouse, Lever and Ashby.</li><li>Parses HTML, and uses Playwright as a fallback for dynamic pages.</li><li>Records historical results.</li><li>Normalises URLs and checks for duplicates.</li><li>Generates CSV and HTML reports.</li></ul></div>
 <div class="jh-flow" role="group" aria-label="Current Python workflow"><div><span>01</span><strong>Watchlist</strong><small>306 companies</small></div><i aria-hidden="true">→</i><div><span>02</span><strong>ATS / HTML</strong><small>APIs + Playwright fallback</small></div><i aria-hidden="true">→</i><div><span>03</span><strong>History</strong><small>dedupe &amp; statuses</small></div><i aria-hidden="true">→</i><div><span>04</span><strong>Report</strong><small>CSV + dashboard</small></div></div>
 </section>
 <section class="study-section jh-text-section" id="audit">
-<p class="eyebrow">07 / The audit</p><h2>170 companies were being skipped.</h2>
-<div class="jh-copy"><p>One of the most useful checks was also one of the most frustrating. The old <code>check_boards.py</code> recognised only certain ATS types. In a watchlist of 306 companies, 170 rows were being skipped before the script tried to check them.</p><p>So I couldn't treat a list of results as evidence that the whole watchlist had been searched. I had to separate <em>companies loaded</em> from <em>companies actually checked</em>.</p><p>The newer <code>check_all_companies.py</code> records each company's outcome and makes unresolved pages or technical errors visible. That's a stronger foundation, even if it still needs more testing.</p></div>
-<figure class="jh-audit" aria-label="Earlier system audit: 136 of 306 companies eligible for checking, 170 skipped before a request"><div class="jh-audit-head"><span>OLD SCRIPT / WATCHLIST COVERAGE</span><strong>306 rows</strong></div><div class="jh-audit-track"><span class="jh-audit-handled" title="136 eligible for checking"></span><span class="jh-audit-skipped" title="170 skipped"></span></div><div class="jh-audit-legend"><p><i class="dot-ok"></i><strong>136</strong> eligible for the old checker <small>Not necessarily successfully checked</small></p><p><i class="dot-bad"></i><strong>170</strong> silently skipped <small>Before any request</small></p></div><figcaption>These figures come from the audit of the earlier script, not from the current system. The visual shows eligibility for checking, not successful coverage.</figcaption></figure>
+<p class="eyebrow">07 / The audit</p><h2>The audit found 170 companies being skipped</h2>
+<div class="jh-copy"><p>One of the most useful checks was also one of the most frustrating.</p>
+<p>The old <code>check_boards.py</code> recognised only certain ATS types. My watchlist had 306 companies. The script skipped 170 of them before making any request.</p>
+<p class="jh-key">So a list of results was not proof that the whole watchlist had been searched. I had to separate <strong>companies loaded</strong> from <strong>companies actually checked</strong>.</p>
+<p>The newer <code>check_all_companies.py</code> records the outcome for each company. It also shows unresolved pages and technical errors. That is a stronger foundation, although it still needs more testing.</p></div>
+<figure class="jh-audit" aria-label="Earlier system audit: 136 of 306 companies eligible for checking, 170 skipped before a request"><div class="jh-audit-head"><span>Old script / watchlist coverage</span><strong>306 rows</strong></div><div class="jh-audit-track"><span class="jh-audit-handled" title="136 eligible for checking"></span><span class="jh-audit-skipped" title="170 skipped"></span></div><div class="jh-audit-legend"><p><i class="dot-ok"></i><strong>136</strong> eligible for the old checker <small>Not necessarily checked successfully</small></p><p><i class="dot-bad"></i><strong>170</strong> silently skipped <small>Before any request</small></p></div><figcaption>These figures come from the audit of the earlier script, not from the current system. The bar shows eligibility for checking, not successful coverage.</figcaption></figure>
 </section>
 <section class="study-section jh-text-section" id="dashboard">
-<p class="eyebrow">08 / Visible state</p><h2>Making the result understandable.</h2>
-<div class="jh-copy"><p>I wanted the output to make sense without opening a terminal or going through every CSV. The dashboard brings together checked companies, new offers, errors and unresolved sources.</p><p>For example, my attached local test checked Notion through Ashby's public endpoint and generated the dashboard below. It was <strong>one company, not the full watchlist</strong>. That distinction matters: 100% coverage of one test case isn't 100% coverage of the project.</p></div>
+<p class="eyebrow">08 / Visible state</p><h2>I made the result easy to read</h2>
+<div class="jh-copy"><p>I wanted the output to make sense without opening a terminal or going through every CSV.</p>
+<p>The dashboard brings together four things: checked companies, new offers, errors and unresolved sources.</p>
+<p>As a test, I ran the checker locally on Notion, using Ashby's public endpoint. It generated the dashboard below.</p>
+<p class="jh-key">That was <strong>one company, not the full watchlist</strong>. Full coverage of one test case is not full coverage of the project.</p>
+<p>As a UX designer, this is the part I care about most. An automated system is not trustworthy just because it gives an answer. An interface should show what was checked, and also what it could not do.</p></div>
 <figure class="jh-real-dashboard" aria-label="Recreated dashboard data from local one-company test on November 2, 2026">
 <div class="jh-dashboard-head"><div><strong>Job Watch</strong><span>Local test · 02/11/2026</span></div><small>1 company requested</small></div>
 <div class="jh-dashboard-stats"><div><b>1</b><span>Processed</span></div><div><b>1</b><span>Checked</span></div><div><b>0</b><span>New roles</span></div><div><b>0</b><span>Errors</span></div></div>
-<div class="jh-dashboard-table"><span>COMPANY</span><span>STATUS</span><span>ATS</span><span>STRATEGY</span><strong>Notion</strong><strong class="jh-status-pill">checked_no_design</strong><strong>Ashby</strong><strong>ashby_api</strong></div>
-<figcaption>HTML reconstruction using the actual values in the attached one-company report; not a screenshot of a full production run.</figcaption></figure>
+<div class="jh-dashboard-table"><span>Company</span><span>Status</span><span>ATS</span><span>Strategy</span><strong>Notion</strong><strong class="jh-status-pill">checked_no_design</strong><strong>Ashby</strong><strong>ashby_api</strong></div>
+<figcaption>HTML reconstruction using the real values from the one-company report. It is not a screenshot of a full production run.</figcaption></figure>
+</section>
+<section class="study-section jh-text-section" id="art">
+<p class="eyebrow">09 / Another use case</p><h2>I tried the same idea for art opportunities</h2>
+<div class="jh-copy"><p>My background is not limited to digital product design. I also have training and interests in art and interior design. So I built a parallel workflow for creative opportunities.</p>
+<p>It uses a similar structure but different filters. A Product Designer role and an open call for artists should not be judged in the same way.</p>
+<p>Keeping the histories and rules separate showed me which parts of the system can be reused and which cannot.</p></div>
+<div class="jh-taxonomy" aria-label="Categories for the art opportunities search"><span>Employment</span><span>Freelance projects</span><span>Events &amp; commissions</span><span>Open calls</span></div>
 </section>
 <section class="study-section jh-text-section" id="technical">
-<p class="eyebrow">09 / Technical notes</p><h2>What is actually in the repo.</h2>
-<div class="jh-copy"><p>The codebase mixes Python scripts, plain-text specifications and machine-readable outputs. That makes it easier to see both the decisions and the result of each execution.</p></div>
+<p class="eyebrow">10 / Technical notes</p><h2>What is in the repository</h2>
+<div class="jh-copy"><p>The codebase mixes Python scripts, plain-text specifications and machine-readable outputs. This lets me see both the decisions and the result of each run.</p></div>
 <div class="jh-files"><div><code>watchlist_consolidado.xlsx</code><span>Company input</span></div><div><code>check_all_companies.py</code><span>ATS detection and checking</span></div><div><code>make_shard.py / merge_shards.py</code><span>Split and combine batches</span></div><div><code>ofertas_vistas.csv</code><span>Deduplication history</span></div><div><code>coverage_report.csv</code><span>One row per company checked or attempted</span></div><div><code>resolution_cache.json</code><span>Resolved careers URLs and ATS</span></div><div><code>dashboard.html / daily_search_report.md</code><span>Human-readable outputs</span></div></div>
-<div class="jh-caveat"><strong>What still needs work</strong><p>Running a Python script is not the same as having a reliable daily service. The scheduled job-search workflow remains paused because of the GitHub Actions quota; broad source discovery, complete end-to-end coverage, deduplication against every tracker and scoring still need validation. I'm keeping those gaps visible instead of claiming this runs perfectly.</p></div>
+<div class="jh-status" aria-label="Project status">
+<div class="jh-status-head"><div><span>Status</span><strong>Iterating in public</strong></div><div><span>Watchlist</span><strong>306 companies</strong></div></div>
+<div class="experiment-status jh-status-cols">
+<div><h3>What works</h3><ul class="jh-list"><li>Checks company career pages and ATS feeds</li><li>Removes duplicate offers</li><li>Creates CSV reports and a dashboard</li></ul></div>
+<div><h3>Still needs validation</h3><ul class="jh-list"><li>The scheduled workflow, paused because of the GitHub Actions quota</li><li>Broad source discovery</li><li>Complete end-to-end coverage</li><li>Deduplication against every tracker</li><li>Scoring</li></ul></div>
+</div>
+<p>Running a Python script is not the same as having a reliable daily service. I keep these gaps visible instead of claiming this runs perfectly.</p></div>
 </section>
 <section class="study-section jh-text-section jh-ending" id="outcome">
-<p class="eyebrow">10 / Still building</p><h2>The interesting part is the iteration.</h2>
-<div class="jh-copy"><p>This project was built with AI, but the hard part hasn't been getting code generated. It's been learning which questions to ask, knowing when a result doesn't make sense, and adjusting the system until its output is something I can trust.</p>
-<p>I'm continuing to improve coverage, execution costs and the way findings are presented. I didn't begin with a perfect model of the solution; each version has taught me what the next one needs.</p>
+<p class="eyebrow">11 / Still building</p><h2>What I learned from iterating</h2>
+<div class="jh-copy"><p>I built this project with AI. Getting code generated was not the hard part.</p>
+<p>The hard part was learning which questions to ask, noticing when a result does not make sense, and adjusting the system until I could trust its output.</p>
+<p>I am still improving coverage, execution costs and the way results are presented. I did not start with a perfect model of the solution. Each version showed me what the next one needs.</p>
 <p>And yes, I still have my Excel.</p></div>
 <div class="jh-end-links"><a class="button" href="https://github.com/Abadisedraoui/busqueda-trabajo" target="_blank" rel="noopener noreferrer">Explore the repository <span aria-hidden="true">↗</span></a><a class="button button-secondary" href="experiments.html">Back to Experiments</a></div>
-</section></div></div>
+</section>
+</div></div>
 </article>
 </main>
 <footer class="footer"><div class="container footer-grid"><div class="footer-profile"><a class="footer-name" href="index.html">Zainab Abadi</a><p>Product &amp; UX/UI designer in Madrid. I work out why complex products are hard to use, then fix them, with research, accessibility and design systems.</p><small>© 2026 Zainab Abadi · Madrid</small><small class="footer-credit">Vibe coded with Claude</small></div><nav class="footer-links" aria-label="Site information"><h2>This site</h2><a href="privacy.html">Privacy</a><a href="accessibility.html">Accessibility</a><button type="button" class="cookie-settings" data-cookie-settings>Cookie settings</button></nav><div class="footer-contact"><h2>Find me</h2><a href="https://www.linkedin.com/in/zainab-abadi-7878951b0/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a><a href="https://github.com/Abadisedraoui" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a><a href="https://www.behance.net/az119" target="_blank" rel="noopener noreferrer">Behance <span aria-hidden="true">↗</span></a></div></div></footer>
