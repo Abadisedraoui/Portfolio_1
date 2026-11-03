@@ -89,7 +89,6 @@
 .resume-role--feature .resume-thumb { border-color: #e6dff7; }
 .about-carousel-viewport { height: auto; aspect-ratio: 4 / 5; }
 .about-carousel .about-portrait { object-position: center center; }
-.about-carousel-slide .about-portrait[src$=".gif"] { object-fit: contain; }
 @media (max-width: 1000px) { .glance dl { grid-template-columns: repeat(2, minmax(0,1fr)); } .glance div:nth-child(3) { padding-left: 0; border-left: 0; } .glance div:nth-child(n+3) { border-top: 1px solid var(--line); } }
 @media (max-width: 520px) { .glance { padding-bottom: 24px; } .glance dl { grid-template-columns: repeat(2, minmax(0,1fr)); } .glance div { padding: 12px 12px 12px 0; } .glance div + div { padding-left: 12px; } .glance div:nth-child(3) { padding-left: 0; border-left: 0; } .glance dt { font-size: 12px; } .glance dd { font-size: 13.5px; line-height: 1.4; } .resume-role--feature { padding: 18px !important; } }
 
