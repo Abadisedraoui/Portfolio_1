@@ -164,6 +164,12 @@ html.js .ribbon-toggle { display: inline-flex; }
 .trust .ribbon-dup { display: none; }
 .trust .rl { display: block; height: auto; max-width: none; filter: grayscale(1) contrast(1.12); transition: filter .2s; }
 .trust .ribbon-list li:hover .rl, .trust .ribbon-list li:hover .rl-mark img { filter: none; }
+/* Alma en Pena is a black wordmark, so on hover it takes the pink of its brand (#f6c4c3) by masking the same image */
+.trust .ribbon-list li:has(> .rl-alma) { position: relative; }
+.trust .rl-alma { transition: filter .2s, opacity .2s; }
+.trust .ribbon-list li:has(> .rl-alma)::after { content: ""; position: absolute; left: 0; top: 50%; width: calc(190px * var(--k)); aspect-ratio: 1366 / 120; transform: translateY(-50%); background: #f6c4c3; -webkit-mask: url(assets/logos/logo-alma-en-pena.png) center / 100% 100% no-repeat; mask: url(assets/logos/logo-alma-en-pena.png) center / 100% 100% no-repeat; opacity: 0; transition: opacity .2s; pointer-events: none; }
+.trust .ribbon-list li:has(> .rl-alma):hover::after { opacity: 1; }
+.trust .ribbon-list li:has(> .rl-alma):hover .rl-alma { opacity: 0; }
 .trust .rl-zara { width: calc(150px * var(--k)); } .trust .rl-sheedo { width: calc(150px * var(--k)); }
 .trust .rl-regalador { width: calc(150px * var(--k)); } .trust .rl-ipsik { width: calc(62px * var(--k)); }
 .trust .rl-pop { width: calc(176px * var(--k)); } .trust .rl-alma { width: calc(190px * var(--k)); } .trust .rl-cam { width: calc(124px * var(--k)); }
